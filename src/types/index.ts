@@ -17,6 +17,9 @@ export interface Product {
   conditions: string[];
   applications: string[];
   installationTips: string[];
+  wiringGuide?: string;
+  commonMistakes?: string[];
+  maintenanceNotes?: string[];
 }
 
 export interface CartItem {

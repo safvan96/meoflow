@@ -19,6 +19,18 @@ interface LanguageContextType {
 
 const LANG_STORAGE_KEY = "meoflow-lang";
 const DEFAULT_LANG: Language = "tr";
+const VALID_LANGS: Language[] = ["tr", "en", "ar", "ru", "zh", "az"];
+
+// Map country codes to languages for geo-detection
+const countryToLang: Record<string, Language> = {
+  TR: "tr",
+  IQ: "ar", SA: "ar", AE: "ar", KW: "ar", QA: "ar", BH: "ar", OM: "ar",
+  EG: "ar", JO: "ar", LB: "ar", SY: "ar", YE: "ar", LY: "ar", TN: "ar",
+  DZ: "ar", MA: "ar", SD: "ar", PS: "ar",
+  RU: "ru", BY: "ru", KZ: "ru", KG: "ru", TJ: "ru", UZ: "ru", TM: "ru",
+  CN: "zh", TW: "zh", HK: "zh", MO: "zh", SG: "zh",
+  AZ: "az",
+};
 
 const LanguageContext = createContext<LanguageContextType | undefined>(
   undefined
@@ -28,32 +40,41 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Language>(DEFAULT_LANG);
   const [mounted, setMounted] = useState(false);
 
-  // Load saved language from localStorage on mount
+  // Load saved language or detect from geolocation
   useEffect(() => {
     const stored = localStorage.getItem(LANG_STORAGE_KEY) as Language | null;
-    if (
-      stored &&
-      ["tr", "en", "ar", "ru", "zh", "az", "es"].includes(stored)
-    ) {
+    if (stored && VALID_LANGS.includes(stored)) {
       setLangState(stored);
+      setMounted(true);
+      return;
     }
-    setMounted(true);
+
+    // No saved preference - detect from IP geolocation
+    fetch("https://ipapi.co/country/", { signal: AbortSignal.timeout(3000) })
+      .then((res) => res.text())
+      .then((countryCode) => {
+        const detected = countryToLang[countryCode.trim().toUpperCase()];
+        if (detected) {
+          setLangState(detected);
+          localStorage.setItem(LANG_STORAGE_KEY, detected);
+        }
+      })
+      .catch(() => {
+        // Fallback: try browser language
+        const browserLang = navigator.language.split("-")[0] as Language;
+        if (VALID_LANGS.includes(browserLang)) {
+          setLangState(browserLang);
+        }
+      })
+      .finally(() => setMounted(true));
   }, []);
 
   // Persist language choice & update html attributes
   const setLang = useCallback((newLang: Language) => {
     setLangState(newLang);
     localStorage.setItem(LANG_STORAGE_KEY, newLang);
-
-    // Update <html> lang attribute
     document.documentElement.lang = newLang;
-
-    // Set text direction for RTL languages (Arabic)
-    if (newLang === "ar") {
-      document.documentElement.dir = "rtl";
-    } else {
-      document.documentElement.dir = "ltr";
-    }
+    document.documentElement.dir = newLang === "ar" ? "rtl" : "ltr";
   }, []);
 
   // Set initial html attributes after mount
@@ -68,10 +89,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const t = useCallback(
     (key: string): string => {
       const entry: TranslationEntry | undefined = translations[key];
-      if (!entry) {
-        // Return the key itself as fallback (useful for debugging)
-        return key;
-      }
+      if (!entry) return key;
       return entry[lang] || entry.tr || key;
     },
     [lang]

@@ -15,7 +15,7 @@ export default function ProductDetailContent({
   product,
   relatedProducts,
 }: ProductDetailContentProps) {
-  const { addToCart, exchangeRate } = useCart();
+  const { addToCart, exchangeRate, rateSource } = useCart();
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState<"description" | "specs">(
     "description"
@@ -198,7 +198,7 @@ export default function ProductDetailContent({
                 </span>
               </div>
               <p className="mt-1 text-xs text-gray-500">
-                Fiyatlar KDV haric, döviz kuru günlük güncellenir. Kur:{" "}
+                Fiyatlar KDV hariç | {rateSource === "TCMB" ? "TCMB Günlük Kur" : "Güncel Döviz Kuru"}:{" "}
                 {exchangeRate.toFixed(2)} TL/USD
               </p>
             </div>
@@ -463,6 +463,80 @@ export default function ProductDetailContent({
                 </ul>
               </div>
             )}
+          </div>
+        </section>
+      )}
+
+      {/* Wiring Guide */}
+      {product.wiringGuide && (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 pb-8 md:pb-12">
+          <div className="bg-white rounded-2xl border border-indigo-100 p-6">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center">
+                <svg className="w-4 h-4 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5.636 5.636a9 9 0 1 0 12.728 0M12 3v9" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900">Kablaj ve Bağlantı Kılavuzu</h3>
+            </div>
+            <div className="text-sm text-gray-600 leading-relaxed space-y-2">
+              {product.wiringGuide.split("\n").map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Common Mistakes */}
+      {product.commonMistakes && product.commonMistakes.length > 0 && (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 pb-8 md:pb-12">
+          <div className="bg-white rounded-2xl border border-red-100 p-6">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center">
+                <svg className="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900">Sık Yapılan Hatalar</h3>
+              <span className="text-xs text-red-500 font-medium bg-red-50 px-2 py-0.5 rounded-full">Dikkat</span>
+            </div>
+            <ul className="space-y-3">
+              {product.commonMistakes.map((mistake, idx) => (
+                <li key={idx} className="flex items-start gap-2.5 text-sm text-gray-600">
+                  <svg className="w-5 h-5 text-red-400 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                  </svg>
+                  {mistake}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      {/* Maintenance Notes */}
+      {product.maintenanceNotes && product.maintenanceNotes.length > 0 && (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 pb-8 md:pb-12">
+          <div className="bg-white rounded-2xl border border-teal-100 p-6">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-8 h-8 rounded-lg bg-teal-50 flex items-center justify-center">
+                <svg className="w-4 h-4 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.049.58.025 1.194-.14 1.743" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900">Bakım ve Periyodik Kontrol</h3>
+            </div>
+            <ul className="space-y-2">
+              {product.maintenanceNotes.map((note, idx) => (
+                <li key={idx} className="flex items-start gap-2 text-sm text-gray-600">
+                  <svg className="w-4 h-4 text-teal-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                  </svg>
+                  {note}
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
       )}

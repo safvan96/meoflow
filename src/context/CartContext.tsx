@@ -12,6 +12,7 @@ interface CartContextType {
   totalItems: number;
   totalPrice: number;
   exchangeRate: number;
+  rateSource: string;
   isCartOpen: boolean;
   setIsCartOpen: (open: boolean) => void;
 }
@@ -20,40 +21,60 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 
 const CART_STORAGE_KEY = "meoflow-cart";
 const RATE_STORAGE_KEY = "meoflow-exchange-rate";
-const BASE_RATE = 38.5; // Base TRY/USD rate
-const DAILY_INCREMENT = 0.015; // %1.5 daily increase simulation
+const RATE_SOURCE_KEY = "meoflow-rate-source";
+const RATE_DATE_KEY = "meoflow-rate-date";
 
-function calculateExchangeRate(): number {
+// Fallback calculation if TCMB API fails
+function calculateFallbackRate(): number {
   const startDate = new Date("2026-01-01").getTime();
   const now = Date.now();
   const daysSinceStart = Math.floor((now - startDate) / (1000 * 60 * 60 * 24));
-  return parseFloat((BASE_RATE * Math.pow(1 + DAILY_INCREMENT / 30, daysSinceStart)).toFixed(2));
+  return parseFloat((38.5 * Math.pow(1 + 0.015 / 30, daysSinceStart)).toFixed(2));
 }
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
-  const [exchangeRate, setExchangeRate] = useState(BASE_RATE);
+  const [exchangeRate, setExchangeRate] = useState(38.5);
+  const [rateSource, setRateSource] = useState("tahmini");
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   useEffect(() => {
+    // Restore cart
     const stored = localStorage.getItem(CART_STORAGE_KEY);
     if (stored) {
-      try {
-        setItems(JSON.parse(stored));
-      } catch {}
+      try { setItems(JSON.parse(stored)); } catch {}
     }
-    const storedRate = localStorage.getItem(RATE_STORAGE_KEY);
-    const lastUpdate = localStorage.getItem("meoflow-rate-date");
+
+    // Check cached rate
     const today = new Date().toDateString();
+    const lastUpdate = localStorage.getItem(RATE_DATE_KEY);
+    const storedRate = localStorage.getItem(RATE_STORAGE_KEY);
+    const storedSource = localStorage.getItem(RATE_SOURCE_KEY);
 
     if (storedRate && lastUpdate === today) {
       setExchangeRate(parseFloat(storedRate));
-    } else {
-      const rate = calculateExchangeRate();
-      setExchangeRate(rate);
-      localStorage.setItem(RATE_STORAGE_KEY, rate.toString());
-      localStorage.setItem("meoflow-rate-date", today);
+      setRateSource(storedSource || "tahmini");
+      return;
     }
+
+    // Fetch from TCMB API route
+    fetch("/api/exchange-rate", { signal: AbortSignal.timeout(5000) })
+      .then((res) => res.json())
+      .then((data: { rate: number; source: string }) => {
+        setExchangeRate(data.rate);
+        setRateSource(data.source);
+        localStorage.setItem(RATE_STORAGE_KEY, data.rate.toString());
+        localStorage.setItem(RATE_SOURCE_KEY, data.source);
+        localStorage.setItem(RATE_DATE_KEY, today);
+      })
+      .catch(() => {
+        const fallback = calculateFallbackRate();
+        setExchangeRate(fallback);
+        setRateSource("tahmini");
+        localStorage.setItem(RATE_STORAGE_KEY, fallback.toString());
+        localStorage.setItem(RATE_SOURCE_KEY, "tahmini");
+        localStorage.setItem(RATE_DATE_KEY, today);
+      });
   }, []);
 
   useEffect(() => {
@@ -110,6 +131,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         totalItems,
         totalPrice,
         exchangeRate,
+        rateSource,
         isCartOpen,
         setIsCartOpen,
       }}

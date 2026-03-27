@@ -1,4 +1,4 @@
-export type Language = "tr" | "en" | "ar" | "ru" | "zh" | "az" | "es";
+export type Language = "tr" | "en" | "ar" | "ru" | "zh" | "az";
 
 export interface TranslationEntry {
   tr: string;
@@ -7,7 +7,6 @@ export interface TranslationEntry {
   ru: string;
   zh: string;
   az: string;
-  es: string;
 }
 
 export const translations: Record<string, TranslationEntry> = {
@@ -19,7 +18,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Главная",
     zh: "首页",
     az: "Ana Səhifə",
-    es: "Inicio",
   },
   "nav.products": {
     tr: "Ürünler",
@@ -28,7 +26,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Продукция",
     zh: "产品",
     az: "Məhsullar",
-    es: "Productos",
   },
   "nav.blog": {
     tr: "Blog",
@@ -37,7 +34,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Блог",
     zh: "博客",
     az: "Bloq",
-    es: "Blog",
   },
   "nav.about": {
     tr: "Hakkımızda",
@@ -46,7 +42,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "О нас",
     zh: "关于我们",
     az: "Haqqımızda",
-    es: "Sobre Nosotros",
   },
   "nav.contact": {
     tr: "İletişim",
@@ -55,7 +50,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Контакты",
     zh: "联系我们",
     az: "Əlaqə",
-    es: "Contacto",
   },
   "nav.cargoTracking": {
     tr: "Kargo Takip",
@@ -64,7 +58,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Отслеживание груза",
     zh: "货运追踪",
     az: "Kargo İzləmə",
-    es: "Seguimiento de Carga",
   },
 
   // ─── Cart ─────────────────────────────────────────────────
@@ -75,7 +68,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Моя корзина",
     zh: "我的购物车",
     az: "Səbətim",
-    es: "Mi Carrito",
   },
   "cart.items": {
     tr: "ürün",
@@ -84,7 +76,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "товаров",
     zh: "件商品",
     az: "məhsul",
-    es: "artículos",
   },
   "cart.empty": {
     tr: "Sepetiniz boş",
@@ -93,7 +84,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Ваша корзина пуста",
     zh: "您的购物车为空",
     az: "Səbətiniz boşdur",
-    es: "Su carrito está vacío",
   },
   "cart.subtotal": {
     tr: "Ara Toplam",
@@ -102,7 +92,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Промежуточный итог",
     zh: "小计",
     az: "Aralıq Cəmi",
-    es: "Subtotal",
   },
   "cart.shipping": {
     tr: "Kargo",
@@ -111,7 +100,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Доставка",
     zh: "运费",
     az: "Çatdırılma",
-    es: "Envío",
   },
   "cart.freeShipping": {
     tr: "Ücretsiz Kargo",
@@ -120,7 +108,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Бесплатная доставка",
     zh: "免费配送",
     az: "Pulsuz Çatdırılma",
-    es: "Envío Gratis",
   },
   "cart.total": {
     tr: "Toplam",
@@ -129,7 +116,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Итого",
     zh: "总计",
     az: "Cəmi",
-    es: "Total",
   },
   "cart.checkout": {
     tr: "Siparişi Tamamla",
@@ -138,7 +124,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Оформить заказ",
     zh: "结算",
     az: "Sifarişi Tamamla",
-    es: "Finalizar Compra",
   },
   "cart.addToCart": {
     tr: "Sepete Ekle",
@@ -147,7 +132,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "В корзину",
     zh: "加入购物车",
     az: "Səbətə Əlavə Et",
-    es: "Agregar al Carrito",
   },
   "cart.goToCart": {
     tr: "Sepete Git",
@@ -156,7 +140,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Перейти в корзину",
     zh: "前往购物车",
     az: "Səbətə Keç",
-    es: "Ir al Carrito",
   },
 
   // ─── Product ──────────────────────────────────────────────
@@ -167,7 +150,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Технические характеристики",
     zh: "技术规格",
     az: "Texniki Xüsusiyyətlər",
-    es: "Especificaciones Técnicas",
   },
   "product.description": {
     tr: "Ürün Açıklaması",
@@ -176,7 +158,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Описание товара",
     zh: "产品描述",
     az: "Məhsul Təsviri",
-    es: "Descripción del Producto",
   },
   "product.relatedProducts": {
     tr: "İlgili Ürünler",
@@ -185,7 +166,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Похожие товары",
     zh: "相关产品",
     az: "Əlaqəli Məhsullar",
-    es: "Productos Relacionados",
   },
   "product.allProducts": {
     tr: "Tüm Ürünler",
@@ -194,7 +174,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Все товары",
     zh: "所有产品",
     az: "Bütün Məhsullar",
-    es: "Todos los Productos",
   },
   "product.categories": {
     tr: "Kategoriler",
@@ -203,7 +182,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Категории",
     zh: "分类",
     az: "Kateqoriyalar",
-    es: "Categorías",
   },
   "product.inStock": {
     tr: "Stokta Var",
@@ -212,7 +190,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "В наличии",
     zh: "有库存",
     az: "Stokda Var",
-    es: "En Stock",
   },
   "product.outOfStock": {
     tr: "Stokta Yok",
@@ -221,7 +198,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Нет в наличии",
     zh: "缺货",
     az: "Stokda Yoxdur",
-    es: "Agotado",
   },
   "product.industries": {
     tr: "Kullanım Alanları",
@@ -230,7 +206,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Отрасли",
     zh: "应用行业",
     az: "İstifadə Sahələri",
-    es: "Industrias",
   },
   "product.conditions": {
     tr: "Çalışma Koşulları",
@@ -239,7 +214,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Условия эксплуатации",
     zh: "工作条件",
     az: "İş Şərtləri",
-    es: "Condiciones de Operación",
   },
   "product.applications": {
     tr: "Uygulamalar",
@@ -248,7 +222,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Применения",
     zh: "应用场景",
     az: "Tətbiqlər",
-    es: "Aplicaciones",
   },
   "product.installationTips": {
     tr: "Kurulum İpuçları",
@@ -257,7 +230,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Советы по установке",
     zh: "安装提示",
     az: "Quraşdırma Məsləhətləri",
-    es: "Consejos de Instalación",
   },
 
   // ─── Blog ─────────────────────────────────────────────────
@@ -268,7 +240,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Блог",
     zh: "博客",
     az: "Bloq",
-    es: "Blog",
   },
   "blog.readMore": {
     tr: "Devamını Oku",
@@ -277,7 +248,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Читать далее",
     zh: "阅读更多",
     az: "Davamını Oxu",
-    es: "Leer Más",
   },
   "blog.readTime": {
     tr: "dk okuma",
@@ -286,7 +256,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "мин чтения",
     zh: "分钟阅读",
     az: "dəq oxuma",
-    es: "min lectura",
   },
   "blog.tags": {
     tr: "Etiketler",
@@ -295,7 +264,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Теги",
     zh: "标签",
     az: "Etiketlər",
-    es: "Etiquetas",
   },
 
   // ─── Contact ──────────────────────────────────────────────
@@ -306,7 +274,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Связаться с нами",
     zh: "联系我们",
     az: "Bizimlə Əlaqə",
-    es: "Contáctenos",
   },
   "contact.form.name": {
     tr: "Adınız Soyadınız",
@@ -315,7 +282,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Имя и фамилия",
     zh: "姓名",
     az: "Ad Soyad",
-    es: "Nombre Completo",
   },
   "contact.form.email": {
     tr: "E-posta Adresiniz",
@@ -324,7 +290,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Электронная почта",
     zh: "电子邮箱",
     az: "E-poçt Ünvanınız",
-    es: "Correo Electrónico",
   },
   "contact.form.phone": {
     tr: "Telefon Numaranız",
@@ -333,7 +298,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Номер телефона",
     zh: "电话号码",
     az: "Telefon Nömrəniz",
-    es: "Número de Teléfono",
   },
   "contact.form.subject": {
     tr: "Konu",
@@ -342,7 +306,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Тема",
     zh: "主题",
     az: "Mövzu",
-    es: "Asunto",
   },
   "contact.form.message": {
     tr: "Mesajınız",
@@ -351,7 +314,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Ваше сообщение",
     zh: "您的留言",
     az: "Mesajınız",
-    es: "Su Mensaje",
   },
   "contact.form.send": {
     tr: "Mesaj Gönder",
@@ -360,7 +322,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Отправить сообщение",
     zh: "发送消息",
     az: "Mesaj Göndər",
-    es: "Enviar Mensaje",
   },
 
   // ─── About ────────────────────────────────────────────────
@@ -371,7 +332,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "О нас",
     zh: "关于我们",
     az: "Haqqımızda",
-    es: "Sobre Nosotros",
   },
   "about.mission": {
     tr: "Misyonumuz",
@@ -380,7 +340,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Наша миссия",
     zh: "我们的使命",
     az: "Missiyamız",
-    es: "Nuestra Misión",
   },
   "about.vision": {
     tr: "Vizyonumuz",
@@ -389,7 +348,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Наше видение",
     zh: "我们的愿景",
     az: "Vizyonumuz",
-    es: "Nuestra Visión",
   },
 
   // ─── Common ───────────────────────────────────────────────
@@ -400,7 +358,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Поиск",
     zh: "搜索",
     az: "Axtar",
-    es: "Buscar",
   },
   "common.filter": {
     tr: "Filtrele",
@@ -409,7 +366,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Фильтр",
     zh: "筛选",
     az: "Filtr",
-    es: "Filtrar",
   },
   "common.loading": {
     tr: "Yükleniyor...",
@@ -418,7 +374,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Загрузка...",
     zh: "加载中...",
     az: "Yüklənir...",
-    es: "Cargando...",
   },
   "common.currency": {
     tr: "TL",
@@ -427,7 +382,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "TL",
     zh: "TL",
     az: "TL",
-    es: "TL",
   },
   "common.exchangeRate": {
     tr: "Döviz Kuru",
@@ -436,7 +390,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Курс обмена",
     zh: "汇率",
     az: "Valyuta Məzənnəsi",
-    es: "Tipo de Cambio",
   },
   "common.close": {
     tr: "Kapat",
@@ -445,7 +398,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Закрыть",
     zh: "关闭",
     az: "Bağla",
-    es: "Cerrar",
   },
   "common.back": {
     tr: "Geri",
@@ -454,7 +406,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Назад",
     zh: "返回",
     az: "Geri",
-    es: "Volver",
   },
   "common.viewAll": {
     tr: "Tümünü Gör",
@@ -463,7 +414,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Смотреть все",
     zh: "查看全部",
     az: "Hamısını Gör",
-    es: "Ver Todo",
   },
   "common.learnMore": {
     tr: "Daha Fazla",
@@ -472,7 +422,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Узнать больше",
     zh: "了解更多",
     az: "Ətraflı",
-    es: "Más Información",
   },
 
   // ─── Hero Section ─────────────────────────────────────────
@@ -483,7 +432,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Промышленное измерительное и контрольное оборудование",
     zh: "工业测量与控制设备",
     az: "Sənaye Ölçmə və İdarəetmə Avadanlıqları",
-    es: "Equipos de Medición y Control Industrial",
   },
   "hero.subtitle": {
     tr: "Debimetre, seviye sensörü, basınç transmitteri ve proses kontrol çözümleri",
@@ -492,7 +440,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Расходомеры, датчики уровня, преобразователи давления и решения для управления процессами",
     zh: "流量计、液位传感器、压力变送器及过程控制解决方案",
     az: "Debimetr, səviyyə sensoru, təzyiq ötürücüsü və proses idarəetmə həlləri",
-    es: "Caudalímetros, sensores de nivel, transmisores de presión y soluciones de control de procesos",
   },
   "hero.cta1": {
     tr: "Ürünleri İncele",
@@ -501,7 +448,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Смотреть товары",
     zh: "浏览产品",
     az: "Məhsulları İncələ",
-    es: "Ver Productos",
   },
   "hero.cta2": {
     tr: "İletişime Geç",
@@ -510,7 +456,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Связаться",
     zh: "联系我们",
     az: "Əlaqə Saxla",
-    es: "Contáctenos",
   },
 
   // ─── Footer ───────────────────────────────────────────────
@@ -521,7 +466,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Все права защищены.",
     zh: "版权所有。",
     az: "Bütün hüquqlar qorunur.",
-    es: "Todos los derechos reservados.",
   },
   "footer.pricesExcludeVAT": {
     tr: "Fiyatlar KDV haricdir",
@@ -530,7 +474,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Цены без НДС",
     zh: "价格不含增值税",
     az: "Qiymətlərə ƏDV daxil deyil",
-    es: "Los precios no incluyen IVA",
   },
   "footer.exchangeRateUpdatedDaily": {
     tr: "Döviz kuru günlük güncellenir",
@@ -539,7 +482,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Курс обмена обновляется ежедневно",
     zh: "汇率每日更新",
     az: "Valyuta məzənnəsi gündəlik yenilənir",
-    es: "Tipo de cambio actualizado diariamente",
   },
   "footer.products": {
     tr: "Ürünler",
@@ -548,7 +490,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Продукция",
     zh: "产品",
     az: "Məhsullar",
-    es: "Productos",
   },
   "footer.corporate": {
     tr: "Kurumsal",
@@ -557,7 +498,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Компания",
     zh: "企业",
     az: "Korporativ",
-    es: "Empresa",
   },
   "footer.contact": {
     tr: "İletişim",
@@ -566,7 +506,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Контакты",
     zh: "联系方式",
     az: "Əlaqə",
-    es: "Contacto",
   },
   "footer.description": {
     tr: "Endüstriyel ölçüm ve kontrol ekipmanlarında güvenilir çözüm ortağınız. Debimetre, seviye sensörü, basınç transmitteri ve proses kontrol cihazları.",
@@ -575,7 +514,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Ваш надежный партнер в области промышленного измерительного и контрольного оборудования. Расходомеры, датчики уровня, преобразователи давления и устройства управления процессами.",
     zh: "您在工业测量与控制设备领域的可靠合作伙伴。流量计、液位传感器、压力变送器及过程控制设备。",
     az: "Sənaye ölçmə və idarəetmə avadanlıqlarında etibarlı həll tərəfdaşınız. Debimetr, səviyyə sensoru, təzyiq ötürücüsü və proses idarəetmə cihazları.",
-    es: "Su socio confiable en equipos de medición y control industrial. Caudalímetros, sensores de nivel, transmisores de presión y dispositivos de control de procesos.",
   },
 
   // ─── Chatbot ──────────────────────────────────────────────
@@ -586,7 +524,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Здравствуйте! Как я могу вам помочь?",
     zh: "您好！有什么可以帮助您的？",
     az: "Salam! Sizə necə kömək edə bilərəm?",
-    es: "Hola! Como puedo ayudarle?",
   },
   "chatbot.placeholder": {
     tr: "Mesajınızı yazın...",
@@ -595,7 +532,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Введите сообщение...",
     zh: "输入您的消息...",
     az: "Mesajınızı yazın...",
-    es: "Escriba su mensaje...",
   },
   "chatbot.quickActions": {
     tr: "Hızlı İşlemler",
@@ -604,7 +540,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Быстрые действия",
     zh: "快捷操作",
     az: "Sürətli Əməliyyatlar",
-    es: "Acciones Rápidas",
   },
 
   // ─── Product Categories (for footer/nav) ──────────────────
@@ -615,7 +550,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Электромагнитные расходомеры",
     zh: "电磁流量计",
     az: "Elektromaqnit Debimetrlər",
-    es: "Caudalímetros Electromagnéticos",
   },
   "category.magneticBypassIndicators": {
     tr: "Manyetik Bypass Göstergeler",
@@ -624,7 +558,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Магнитные байпасные индикаторы",
     zh: "磁翻板液位计",
     az: "Maqnit Baypas Göstəricilər",
-    es: "Indicadores de Bypass Magnético",
   },
   "category.pressureTransmitters": {
     tr: "Basınç Transmitterleri",
@@ -633,7 +566,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Преобразователи давления",
     zh: "压力变送器",
     az: "Təzyiq Ötürücüləri",
-    es: "Transmisores de Presión",
   },
   "category.temperatureSensors": {
     tr: "Sıcaklık Sensörleri",
@@ -642,7 +574,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Датчики температуры",
     zh: "温度传感器",
     az: "Temperatur Sensorları",
-    es: "Sensores de Temperatura",
   },
   "category.levelSensors": {
     tr: "Seviye Sensörleri",
@@ -651,7 +582,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Датчики уровня",
     zh: "液位传感器",
     az: "Səviyyə Sensorları",
-    es: "Sensores de Nivel",
   },
   "category.processControl": {
     tr: "Proses Kontrol",
@@ -660,7 +590,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Управление процессами",
     zh: "过程控制",
     az: "Proses İdarəetmə",
-    es: "Control de Procesos",
   },
 
   // ─── Cargo Tracking ───────────────────────────────────────
@@ -671,7 +600,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Отслеживание груза",
     zh: "货运追踪",
     az: "Kargo İzləmə",
-    es: "Seguimiento de Carga",
   },
   "cargo.enterCode": {
     tr: "Takip kodunuzu girin",
@@ -680,7 +608,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Введите код отслеживания",
     zh: "请输入追踪码",
     az: "İzləmə kodunuzu daxil edin",
-    es: "Ingrese su código de seguimiento",
   },
   "cargo.track": {
     tr: "Sorgula",
@@ -689,7 +616,6 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Отследить",
     zh: "查询",
     az: "Sorğula",
-    es: "Rastrear",
   },
 
   // ─── Language selector ────────────────────────────────────
@@ -700,6 +626,5 @@ export const translations: Record<string, TranslationEntry> = {
     ru: "Выберите язык",
     zh: "选择语言",
     az: "Dil Seçin",
-    es: "Seleccionar Idioma",
   },
 };

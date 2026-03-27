@@ -6,18 +6,16 @@ import { Language } from "@/data/translations";
 
 interface LanguageOption {
   code: Language;
-  flag: string;
   name: string;
 }
 
 const languages: LanguageOption[] = [
-  { code: "tr", flag: "\u{1F1F9}\u{1F1F7}", name: "T\u00fcrk\u00e7e" },
-  { code: "en", flag: "\u{1F1EC}\u{1F1E7}", name: "English" },
-  { code: "ar", flag: "\u{1F1F8}\u{1F1E6}", name: "\u0627\u0644\u0639\u0631\u0628\u064A\u0629" },
-  { code: "ru", flag: "\u{1F1F7}\u{1F1FA}", name: "\u0420\u0443\u0441\u0441\u043A\u0438\u0439" },
-  { code: "zh", flag: "\u{1F1E8}\u{1F1F3}", name: "\u4E2D\u6587" },
-  { code: "az", flag: "\u{1F1E6}\u{1F1FF}", name: "Az\u0259rbaycan" },
-  { code: "es", flag: "\u{1F1EA}\u{1F1F8}", name: "Espa\u00f1ol" },
+  { code: "tr", name: "Türkçe" },
+  { code: "en", name: "English" },
+  { code: "ar", name: "العربية" },
+  { code: "ru", name: "Русский" },
+  { code: "zh", name: "中文" },
+  { code: "az", name: "Azərbaycan" },
 ];
 
 export default function LanguageSelector() {
@@ -27,7 +25,6 @@ export default function LanguageSelector() {
 
   const currentLang = languages.find((l) => l.code === lang) || languages[0];
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
@@ -41,7 +38,6 @@ export default function LanguageSelector() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Close on Escape key
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
@@ -63,8 +59,10 @@ export default function LanguageSelector() {
         aria-expanded={isOpen}
         aria-haspopup="listbox"
       >
-        <span className="text-base leading-none">{currentLang.flag}</span>
-        <span className="hidden sm:inline text-xs">{currentLang.code.toUpperCase()}</span>
+        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5a17.92 17.92 0 0 1-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
+        </svg>
+        <span className="text-xs">{currentLang.name}</span>
         <svg
           className={`w-3 h-3 text-gray-400 transition-transform ${isOpen ? "rotate-180" : ""}`}
           fill="none"
@@ -78,7 +76,7 @@ export default function LanguageSelector() {
 
       {isOpen && (
         <div
-          className="absolute right-0 top-full mt-1.5 w-44 bg-white rounded-xl shadow-lg border border-gray-100 py-1.5 z-[60] animate-in fade-in slide-in-from-top-1 duration-150"
+          className="absolute right-0 top-full mt-1.5 w-40 bg-white rounded-xl shadow-lg border border-gray-100 py-1.5 z-[60]"
           role="listbox"
           aria-label="Languages"
         >
@@ -89,7 +87,7 @@ export default function LanguageSelector() {
                 setLang(option.code);
                 setIsOpen(false);
               }}
-              className={`w-full flex items-center gap-2.5 px-3 py-2 text-sm transition-colors ${
+              className={`w-full flex items-center justify-between px-3 py-2 text-sm transition-colors ${
                 option.code === lang
                   ? "bg-primary-50 text-primary-700 font-medium"
                   : "text-gray-700 hover:bg-gray-50"
@@ -97,11 +95,10 @@ export default function LanguageSelector() {
               role="option"
               aria-selected={option.code === lang}
             >
-              <span className="text-base leading-none">{option.flag}</span>
               <span>{option.name}</span>
               {option.code === lang && (
                 <svg
-                  className="w-4 h-4 ml-auto text-primary-600"
+                  className="w-4 h-4 text-primary-600"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
