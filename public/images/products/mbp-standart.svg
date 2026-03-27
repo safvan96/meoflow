@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <defs>
+    <linearGradient id="tube" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6B7280"/>
+      <stop offset="30%" stop-color="#D1D5DB"/>
+      <stop offset="70%" stop-color="#9CA3AF"/>
+      <stop offset="100%" stop-color="#6B7280"/>
+    </linearGradient>
+    <linearGradient id="flange-g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#9CA3AF"/>
+      <stop offset="50%" stop-color="#E5E7EB"/>
+      <stop offset="100%" stop-color="#6B7280"/>
+    </linearGradient>
+    <linearGradient id="liquid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0EA5E9" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0369A1" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="float" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#D97706"/>
+      <stop offset="50%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="tank-wall" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4B5563"/>
+      <stop offset="50%" stop-color="#6B7280"/>
+      <stop offset="100%" stop-color="#4B5563"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="120%">
+      <feDropShadow dx="2" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="400" rx="12" fill="#F8FAFC"/>
+
+  <!-- Tank outline (partial, right side) -->
+  <rect x="360" y="40" width="200" height="320" rx="8" fill="none" stroke="url(#tank-wall)" stroke-width="4" stroke-dasharray="8 4" opacity="0.4"/>
+  <text x="460" y="30" text-anchor="middle" fill="#94A3B8" font-family="Inter, sans-serif" font-size="11">TANK</text>
+
+  <!-- Liquid in tank -->
+  <rect x="364" y="190" width="192" height="166" rx="5" fill="url(#liquid)" opacity="0.3"/>
+
+  <!-- Bypass tube (vertical) -->
+  <rect x="280" y="50" width="36" height="310" rx="4" fill="url(#tube)" filter="url(#shadow)"/>
+
+  <!-- Inner tube (glass/visible area) -->
+  <rect x="286" y="56" width="24" height="298" rx="2" fill="#F1F5F9" opacity="0.5"/>
+
+  <!-- Liquid inside bypass tube -->
+  <rect x="286" y="192" width="24" height="162" rx="2" fill="url(#liquid)"/>
+
+  <!-- Float/Magnet -->
+  <rect x="278" y="178" width="40" height="22" rx="6" fill="url(#float)" filter="url(#shadow)"/>
+  <rect x="282" y="182" width="32" height="14" rx="4" fill="#F59E0B" opacity="0.6"/>
+  <text x="298" y="193" text-anchor="middle" fill="#92400E" font-family="monospace" font-size="8" font-weight="bold">N S</text>
+
+  <!-- Flap indicators (left side of tube) -->
+  <!-- Red flaps (below float = liquid present) -->
+  <rect x="252" y="200" width="24" height="10" rx="2" fill="#DC2626"/>
+  <rect x="252" y="215" width="24" height="10" rx="2" fill="#DC2626"/>
+  <rect x="252" y="230" width="24" height="10" rx="2" fill="#DC2626"/>
+  <rect x="252" y="245" width="24" height="10" rx="2" fill="#DC2626"/>
+  <rect x="252" y="260" width="24" height="10" rx="2" fill="#DC2626"/>
+  <rect x="252" y="275" width="24" height="10" rx="2" fill="#DC2626"/>
+  <rect x="252" y="290" width="24" height="10" rx="2" fill="#DC2626"/>
+  <rect x="252" y="305" width="24" height="10" rx="2" fill="#DC2626"/>
+  <rect x="252" y="320" width="24" height="10" rx="2" fill="#DC2626"/>
+  <rect x="252" y="335" width="24" height="10" rx="2" fill="#DC2626"/>
+
+  <!-- White flaps (above float = no liquid) -->
+  <rect x="252" y="60" width="24" height="10" rx="2" fill="#F1F5F9" stroke="#D1D5DB" stroke-width="0.5"/>
+  <rect x="252" y="75" width="24" height="10" rx="2" fill="#F1F5F9" stroke="#D1D5DB" stroke-width="0.5"/>
+  <rect x="252" y="90" width="24" height="10" rx="2" fill="#F1F5F9" stroke="#D1D5DB" stroke-width="0.5"/>
+  <rect x="252" y="105" width="24" height="10" rx="2" fill="#F1F5F9" stroke="#D1D5DB" stroke-width="0.5"/>
+  <rect x="252" y="120" width="24" height="10" rx="2" fill="#F1F5F9" stroke="#D1D5DB" stroke-width="0.5"/>
+  <rect x="252" y="135" width="24" height="10" rx="2" fill="#F1F5F9" stroke="#D1D5DB" stroke-width="0.5"/>
+  <rect x="252" y="150" width="24" height="10" rx="2" fill="#F1F5F9" stroke="#D1D5DB" stroke-width="0.5"/>
+  <rect x="252" y="165" width="24" height="10" rx="2" fill="#F1F5F9" stroke="#D1D5DB" stroke-width="0.5"/>
+  <rect x="252" y="180" width="24" height="10" rx="2" fill="#F1F5F9" stroke="#D1D5DB" stroke-width="0.5"/>
+
+  <!-- Scale markings -->
+  <line x1="240" y1="70" x2="250" y2="70" stroke="#94A3B8" stroke-width="1"/>
+  <text x="236" y="74" text-anchor="end" fill="#94A3B8" font-family="monospace" font-size="8">100%</text>
+  <line x1="240" y1="130" x2="250" y2="130" stroke="#94A3B8" stroke-width="1"/>
+  <text x="236" y="134" text-anchor="end" fill="#94A3B8" font-family="monospace" font-size="8">80%</text>
+  <line x1="240" y1="190" x2="250" y2="190" stroke="#94A3B8" stroke-width="1"/>
+  <text x="236" y="194" text-anchor="end" fill="#94A3B8" font-family="monospace" font-size="8">60%</text>
+  <line x1="240" y1="250" x2="250" y2="250" stroke="#94A3B8" stroke-width="1"/>
+  <text x="236" y="254" text-anchor="end" fill="#94A3B8" font-family="monospace" font-size="8">40%</text>
+  <line x1="240" y1="310" x2="250" y2="310" stroke="#94A3B8" stroke-width="1"/>
+  <text x="236" y="314" text-anchor="end" fill="#94A3B8" font-family="monospace" font-size="8">20%</text>
+
+  <!-- Upper connection to tank -->
+  <rect x="316" y="68" width="48" height="18" rx="3" fill="url(#flange-g)"/>
+  <rect x="356" y="58" width="10" height="38" rx="3" fill="url(#flange-g)"/>
+
+  <!-- Lower connection to tank -->
+  <rect x="316" y="320" width="48" height="18" rx="3" fill="url(#flange-g)"/>
+  <rect x="356" y="310" width="10" height="38" rx="3" fill="url(#flange-g)"/>
+
+  <!-- Transmitter option (mounted on tube) -->
+  <rect x="60" y="130" width="80" height="55" rx="6" fill="#1E40AF" filter="url(#shadow)"/>
+  <rect x="68" y="138" width="64" height="30" rx="3" fill="#0F172A"/>
+  <text x="100" y="157" text-anchor="middle" fill="#22D3EE" font-family="monospace" font-size="10">4-20mA</text>
+  <text x="100" y="178" text-anchor="middle" fill="#93C5FD" font-family="Inter, sans-serif" font-size="8">Transmitter</text>
+  <line x1="140" y1="157" x2="252" y2="157" stroke="#6B7280" stroke-width="1.5" stroke-dasharray="3 2"/>
+
+  <!-- Labels -->
+  <text x="130" y="380" text-anchor="middle" fill="#1E40AF" font-family="Inter, sans-serif" font-size="16" font-weight="700">Manyetik Bypass</text>
+  <text x="130" y="396" text-anchor="middle" fill="#1E40AF" font-family="Inter, sans-serif" font-size="16" font-weight="700">Seviye Gostergesi</text>
+
+  <!-- Legend -->
+  <rect x="50" y="260" width="12" height="12" rx="2" fill="#DC2626"/>
+  <text x="68" y="271" fill="#64748B" font-family="Inter, sans-serif" font-size="10">Sivi Seviyesi</text>
+  <rect x="50" y="280" width="12" height="12" rx="2" fill="#F1F5F9" stroke="#D1D5DB" stroke-width="0.5"/>
+  <text x="68" y="291" fill="#64748B" font-family="Inter, sans-serif" font-size="10">Bos Alan</text>
+</svg>

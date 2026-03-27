@@ -2,36 +2,45 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ChatBot from "@/components/ChatBot";
 import { CartProvider } from "@/context/CartContext";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://meoflow.com.tr"),
   title: {
     default: "Meoflow | Endüstriyel Ölçüm ve Kontrol Ekipmanları",
     template: "%s | Meoflow",
   },
   description:
-    "Elektromanyetik debimetre, manyetik bypass seviye göstergesi, basınç transmitteri, sıcaklık sensörü ve proses kontrol cihazları. Endüstriyel otomasyon çözümleri.",
+    "Elektromanyetik debimetre, manyetik bypass seviye göstergesi, basınç transmitteri, sıcaklık sensörü ve proses kontrol cihazları. Endüstriyel otomasyon çözümleri. Uluslararası teslimat.",
   keywords: [
     "elektromanyetik debimetre",
+    "electromagnetic flowmeter",
+    "مقياس التدفق الكهرومغناطيسي",
+    "электромагнитный расходомер",
+    "电磁流量计",
     "manyetik bypass seviye göstergesi",
+    "magnetic bypass level indicator",
     "basınç transmitteri",
+    "pressure transmitter",
     "sıcaklık sensörü",
     "PT100",
     "termokupl",
     "seviye sensörü",
     "proses kontrol",
     "endüstriyel otomasyon",
-    "debi ölçüm",
-    "akış ölçüm",
+    "industrial automation",
     "meoflow",
   ],
   openGraph: {
     type: "website",
     locale: "tr_TR",
+    alternateLocale: ["en_US", "ar_SA", "ru_RU", "zh_CN", "az_AZ", "es_ES"],
     siteName: "Meoflow",
-    title: "Meoflow | Endüstriyel Ölçüm ve Kontrol Ekipmanları",
+    title: "Meoflow | Industrial Measurement & Control Equipment",
     description:
-      "Elektromanyetik debimetre, manyetik bypass seviye göstergesi ve endüstriyel otomasyon çözümleri.",
+      "Electromagnetic flowmeters, magnetic bypass level indicators, pressure transmitters. Worldwide shipping.",
   },
   robots: {
     index: true,
@@ -43,6 +52,12 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+  icons: {
+    icon: "/favicon.svg",
+  },
+  alternates: {
+    canonical: "https://meoflow.com.tr",
   },
 };
 
@@ -62,11 +77,14 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-gray-50 text-gray-900 antialiased">
-        <CartProvider>
-          <Header />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
-        </CartProvider>
+        <LanguageProvider>
+          <CartProvider>
+            <Header />
+            <main className="min-h-screen">{children}</main>
+            <Footer />
+            <ChatBot />
+          </CartProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

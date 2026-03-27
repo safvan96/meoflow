@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" fill="none">
+  <!-- Flow meter gauge arc -->
+  <path d="M12 38 C12 22, 26 12, 38 12" stroke="#2563eb" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <path d="M38 12 C50 12, 60 22, 60 38" stroke="#0ea5e9" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <!-- Gauge needle -->
+  <line x1="36" y1="38" x2="24" y2="18" stroke="#1d4ed8" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Center dot -->
+  <circle cx="36" cy="38" r="3" fill="#2563eb"/>
+  <!-- Flow wave lines -->
+  <path d="M52 20 Q58 14, 64 20 Q70 26, 76 20" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <path d="M52 30 Q58 24, 64 30 Q70 36, 76 30" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <!-- Text -->
+  <text x="82" y="33" font-family="Inter, sans-serif" font-weight="800" font-size="24" fill="#1e3a8a">meo</text>
+  <text x="122" y="33" font-family="Inter, sans-serif" font-weight="800" font-size="24" fill="#2563eb">flow</text>
+</svg>

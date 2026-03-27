@@ -10,10 +10,10 @@ const featuredProducts = products.filter((p) => p.featured);
 const latestPosts = blogPosts.slice(0, 3);
 
 const stats = [
-  { value: "15+", label: "Yil Sektör Deneyimi" },
+  { value: "15+", label: "Yıl Sektör Deneyimi" },
   { value: "200+", label: "Endüstriyel Ürün" },
-  { value: "3.000+", label: "Mutlu Müsteri" },
-  { value: "40+", label: "Ihracat Yapilan Ülke" },
+  { value: "3.000+", label: "Mutlu Müşteri" },
+  { value: "40+", label: "İhracat Yapılan Ülke" },
 ];
 
 export default function HomePage() {
@@ -42,22 +42,22 @@ export default function HomePage() {
             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6">
               <span className="w-2 h-2 bg-accent-400 rounded-full badge-pulse" />
               <span className="text-sm font-medium text-white/90">
-                Endüstriyel Ölcüm ve Kontrol Cözümleri
+                Endüstriyel Ölçüm ve Kontrol Çözümleri
               </span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">
-              Endüstriyel Ölcüm
+              Endüstriyel Ölçüm
               <br />
-              <span className="text-accent-400">Ekipmanlarinda</span>
+              <span className="text-accent-400">Ekipmanlarında</span>
               <br />
-              Güvenilir Cözüm Ortaginiz
+              Güvenilir Çözüm Ortağınız
             </h1>
 
             <p className="mt-6 text-lg sm:text-xl text-primary-100/90 max-w-2xl leading-relaxed">
-              Elektromanyetik debimetreler, seviye göstergeleri, basinc
-              transmitterleri ve sicaklik sensörleri ile endüstriyel
-              proseslerinizi hassas ve güvenilir sekilde kontrol edin.
+              Elektromanyetik debimetreler, seviye göstergeleri, basınç
+              transmitterleri ve sıcaklık sensörleri ile endüstriyel
+              proseslerinizi hassas ve güvenilir şekilde kontrol edin.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
@@ -65,7 +65,7 @@ export default function HomePage() {
                 href="/urunler"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-700 font-bold rounded-xl hover:bg-primary-50 transition-all shadow-lg shadow-black/10 hover:shadow-xl hover:shadow-black/15 active:scale-[0.98]"
               >
-                Ürünleri Incele
+                Ürünleri İncele
                 <svg
                   className="w-5 h-5"
                   fill="none"
@@ -97,7 +97,7 @@ export default function HomePage() {
                     d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
                   />
                 </svg>
-                Iletisime Gec
+                İletişime Geç
               </Link>
             </div>
 
@@ -117,7 +117,7 @@ export default function HomePage() {
                     d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.745 3.745 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z"
                   />
                 </svg>
-                CE & ATEX Sertifikali
+                CE & ATEX Sertifikalı
               </span>
               <span className="flex items-center gap-2">
                 <svg
@@ -164,11 +164,11 @@ export default function HomePage() {
               Ürün Kategorileri
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
-              Endüstriyel Cözümlerimiz
+              Endüstriyel Çözümlerimiz
             </h2>
             <p className="mt-4 text-gray-500 text-lg leading-relaxed">
-              Debi ölcümünden sicaklik kontrolüne, basinc transmitterlerinden
-              seviye göstergelerine kadar kapsamli endüstriyel ölcüm ekipmanlari.
+              Debi ölçümünden sıcaklık kontrolüne, basınç transmitterlerinden
+              seviye göstergelerine kadar kapsamlı endüstriyel ölçüm ekipmanları.
             </p>
           </div>
 
@@ -217,14 +217,14 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-12">
             <div>
               <span className="inline-block px-3 py-1 bg-primary-50 text-primary-600 text-sm font-semibold rounded-full mb-4">
-                One Cikan Ürünler
+                Öne Çıkan Ürünler
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
-                En Cok Tercih Edilen Ürünler
+                En Çok Tercih Edilen Ürünler
               </h2>
               <p className="mt-3 text-gray-500 text-lg max-w-xl">
-                Müsterilerimizin en cok siparis ettigi, endüstriyel
-                uygulamalarda kanitmis ürünlerimiz.
+                Müşterilerimizin en çok sipariş ettiği, endüstriyel
+                uygulamalarda kanıtlamış ürünlerimiz.
               </p>
             </div>
             <Link
@@ -275,8 +275,8 @@ export default function HomePage() {
               Rakamlarla Meoflow
             </h2>
             <p className="mt-4 text-primary-100/80 text-lg max-w-xl mx-auto">
-              Yillardir sürdürdügümüz güvenilirlik ve kalite anlayisimiz,
-              rakamlarimizda kendini gösteriyor.
+              Yıllardır sürdürdüğümüz güvenilirlik ve kalite anlayışımız,
+              rakamlarımızda kendini gösteriyor.
             </p>
           </div>
 
@@ -344,7 +344,7 @@ export default function HomePage() {
                   d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0H6.375m11.25 0h3.375a1.125 1.125 0 0 0 1.125-1.125v-2.874m0 0a2.25 2.25 0 0 0-1.883-2.22l-3.238-.54a1.5 1.5 0 0 1-1.254-1.478V6.75A2.25 2.25 0 0 0 13.5 4.5h-3A2.25 2.25 0 0 0 8.25 6.75v1.378a1.5 1.5 0 0 1-1.254 1.478l-3.238.54A2.25 2.25 0 0 0 1.875 12v2.25"
                 />
               </svg>
-              <span className="text-sm font-medium">Hizli Kargo</span>
+              <span className="text-sm font-medium">Hızlı Kargo</span>
             </div>
             <div className="flex items-center gap-2">
               <svg
@@ -360,7 +360,7 @@ export default function HomePage() {
                   d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.049.58.025 1.194-.14 1.743"
                 />
               </svg>
-              <span className="text-sm font-medium">2 Yil Garanti</span>
+              <span className="text-sm font-medium">2 Yıl Garanti</span>
             </div>
           </div>
         </div>
@@ -375,18 +375,18 @@ export default function HomePage() {
                 Blog & Rehberler
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
-                Teknik Yazilar ve Rehberler
+                Teknik Yazılar ve Rehberler
               </h2>
               <p className="mt-3 text-gray-500 text-lg max-w-xl">
-                Endüstriyel ölcüm ekipmanlari hakkinda teknik bilgiler, secim
-                rehberleri ve uygulama ipuclari.
+                Endüstriyel ölçüm ekipmanları hakkında teknik bilgiler, seçim
+                rehberleri ve uygulama ipuçları.
               </p>
             </div>
             <Link
               href="/blog"
               className="mt-6 sm:mt-0 inline-flex items-center gap-2 text-primary-600 font-semibold hover:text-primary-800 transition-colors shrink-0"
             >
-              Tüm Yazilar
+              Tüm Yazılar
               <svg
                 className="w-5 h-5"
                 fill="none"
@@ -471,14 +471,14 @@ export default function HomePage() {
 
             <div className="relative">
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                Projeniz Icin Dogru Ekipmani
+                Projeniz İçin Doğru Ekipmanı
                 <br />
                 Birlikte Belirleyelim
               </h2>
               <p className="mt-5 text-primary-100/80 text-lg max-w-xl mx-auto leading-relaxed">
-                Uzman mühendislik ekibimiz, uygulamaniza en uygun ölcüm ve
-                kontrol ekipmanini secmenizde size yardimci olmaya hazir.
-                Ücretsiz teknik danismanlik icin hemen iletisime gecin.
+                Uzman mühendislik ekibimiz, uygulamanıza en uygun ölçüm ve
+                kontrol ekipmanını seçmenizde size yardımcı olmaya hazır.
+                Ücretsiz teknik danışmanlık için hemen iletişime geçin.
               </p>
 
               <div className="mt-10 flex flex-wrap justify-center gap-4">
@@ -499,7 +499,7 @@ export default function HomePage() {
                       d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
                     />
                   </svg>
-                  Teklif Isteyin
+                  Teklif İsteyin
                 </Link>
                 <a
                   href="tel:+908501234567"

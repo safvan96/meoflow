@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <defs>
+    <linearGradient id="actuator-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4B5563"/>
+      <stop offset="30%" stop-color="#9CA3AF"/>
+      <stop offset="70%" stop-color="#6B7280"/>
+      <stop offset="100%" stop-color="#4B5563"/>
+    </linearGradient>
+    <linearGradient id="actuator-top" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E40AF"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#1E3A8A"/>
+    </linearGradient>
+    <linearGradient id="valve-body" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6B7280"/>
+      <stop offset="30%" stop-color="#D1D5DB"/>
+      <stop offset="70%" stop-color="#9CA3AF"/>
+      <stop offset="100%" stop-color="#6B7280"/>
+    </linearGradient>
+    <linearGradient id="pipe-g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6B7280"/>
+      <stop offset="30%" stop-color="#9CA3AF"/>
+      <stop offset="70%" stop-color="#6B7280"/>
+      <stop offset="100%" stop-color="#4B5563"/>
+    </linearGradient>
+    <linearGradient id="spring" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="50%" stop-color="#34D399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="120%">
+      <feDropShadow dx="2" dy="3" stdDeviation="5" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="400" rx="12" fill="#F8FAFC"/>
+
+  <!-- Pipe left -->
+  <rect x="60" y="260" width="150" height="40" rx="4" fill="url(#pipe-g)" filter="url(#shadow)"/>
+  <!-- Left flange -->
+  <rect x="200" y="248" width="18" height="64" rx="3" fill="#9CA3AF"/>
+  <circle cx="209" cy="258" r="3" fill="#4B5563"/>
+  <circle cx="209" cy="302" r="3" fill="#4B5563"/>
+
+  <!-- Pipe right -->
+  <rect x="390" y="260" width="150" height="40" rx="4" fill="url(#pipe-g)" filter="url(#shadow)"/>
+  <!-- Right flange -->
+  <rect x="382" y="248" width="18" height="64" rx="3" fill="#9CA3AF"/>
+  <circle cx="391" cy="258" r="3" fill="#4B5563"/>
+  <circle cx="391" cy="302" r="3" fill="#4B5563"/>
+
+  <!-- Valve body (ball valve) -->
+  <rect x="218" y="240" width="164" height="80" rx="10" fill="url(#valve-body)" filter="url(#shadow)"/>
+  <!-- Valve bore -->
+  <ellipse cx="300" cy="280" rx="18" ry="16" fill="#374151"/>
+  <ellipse cx="300" cy="280" rx="14" ry="12" fill="#1F2937"/>
+
+  <!-- Flow arrows -->
+  <path d="M100 277 L130 277 L125 272 M130 277 L125 282" stroke="#0EA5E9" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M140 283 L170 283 L165 278 M170 283 L165 288" stroke="#0EA5E9" stroke-width="2" fill="none" opacity="0.6"/>
+
+  <!-- Stem (connecting valve to actuator) -->
+  <rect x="290" y="175" width="20" height="70" rx="2" fill="#9CA3AF"/>
+
+  <!-- ISO 5211 mounting pad -->
+  <rect x="270" y="230" width="60" height="16" rx="3" fill="#6B7280"/>
+  <circle cx="280" cy="238" r="2" fill="#4B5563"/>
+  <circle cx="320" cy="238" r="2" fill="#4B5563"/>
+
+  <!-- Actuator body (scotch yoke / rack & pinion style) -->
+  <rect x="230" y="60" width="140" height="120" rx="12" fill="url(#actuator-body)" filter="url(#shadow)"/>
+
+  <!-- Actuator top cap -->
+  <rect x="240" y="55" width="120" height="18" rx="6" fill="url(#actuator-top)"/>
+
+  <!-- Air port indicators -->
+  <rect x="225" y="85" width="16" height="12" rx="3" fill="#374151"/>
+  <text x="233" y="94" text-anchor="middle" fill="#9CA3AF" font-size="6">P1</text>
+  <rect x="359" y="85" width="16" height="12" rx="3" fill="#374151"/>
+  <text x="367" y="94" text-anchor="middle" fill="#9CA3AF" font-size="6">P2</text>
+
+  <!-- Spring coils visible through cutaway -->
+  <path d="M260 90 L340 90" stroke="url(#spring)" stroke-width="3" fill="none"/>
+  <path d="M260 100 L340 100" stroke="url(#spring)" stroke-width="3" fill="none"/>
+  <path d="M260 110 L340 110" stroke="url(#spring)" stroke-width="3" fill="none"/>
+  <path d="M260 120 L340 120" stroke="url(#spring)" stroke-width="3" fill="none"/>
+  <path d="M260 130 L340 130" stroke="url(#spring)" stroke-width="3" fill="none"/>
+  <path d="M260 140 L340 140" stroke="url(#spring)" stroke-width="3" fill="none"/>
+  <path d="M260 150 L340 150" stroke="url(#spring)" stroke-width="3" fill="none"/>
+
+  <!-- Piston indicator -->
+  <rect x="255" y="113" width="90" height="12" rx="2" fill="#374151" opacity="0.6"/>
+  <text x="300" y="122" text-anchor="middle" fill="#D1D5DB" font-size="7">PISTON</text>
+
+  <!-- Position indicator arrow -->
+  <rect x="285" y="42" width="30" height="16" rx="3" fill="#374151"/>
+  <text x="300" y="53" text-anchor="middle" fill="#22C55E" font-size="8" font-weight="bold">OPEN</text>
+
+  <!-- Solenoid valve (accessory on side) -->
+  <rect x="380" y="85" width="55" height="40" rx="4" fill="#1E3A8A" filter="url(#shadow)"/>
+  <text x="407" y="100" text-anchor="middle" fill="#BFDBFE" font-size="7">SOLENOID</text>
+  <text x="407" y="115" text-anchor="middle" fill="#93C5FD" font-size="7">5/2 VALF</text>
+  <line x1="375" y1="100" x2="380" y2="100" stroke="#6B7280" stroke-width="2"/>
+
+  <!-- Limit switch box (on top) -->
+  <rect x="350" y="48" width="55" height="35" rx="4" fill="#F59E0B" filter="url(#shadow)"/>
+  <text x="377" y="62" text-anchor="middle" fill="#78350F" font-size="7" font-weight="bold">LIMIT</text>
+  <text x="377" y="74" text-anchor="middle" fill="#92400E" font-size="7">SWITCH</text>
+  <circle cx="365" cy="48" r="3" fill="#22C55E"/>
+  <circle cx="390" cy="48" r="3" fill="#DC2626"/>
+
+  <!-- Air supply arrows -->
+  <path d="M225 91 L200 91 L195 85 M200 91 L195 97" stroke="#0EA5E9" stroke-width="1.5" fill="none" stroke-dasharray="3 2"/>
+  <text x="180" y="95" text-anchor="end" fill="#0EA5E9" font-size="8">Hava 6 bar</text>
+
+  <!-- Specs info -->
+  <rect x="30" y="60" width="140" height="110" rx="6" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="100" y="80" text-anchor="middle" fill="#475569" font-family="Inter, sans-serif" font-size="10" font-weight="600">Teknik Bilgi</text>
+  <text x="40" y="100" fill="#64748B" font-size="9">Tork: 12-9000 Nm</text>
+  <text x="40" y="115" fill="#64748B" font-size="9">Hava: 2-8 bar</text>
+  <text x="40" y="130" fill="#64748B" font-size="9">Baglanti: ISO 5211</text>
+  <text x="40" y="145" fill="#64748B" font-size="9">Donus: 0-90 derece</text>
+  <text x="40" y="160" fill="#64748B" font-size="9">Tip: DA / SR</text>
+
+  <!-- Labels -->
+  <text x="300" y="355" text-anchor="middle" fill="#1E40AF" font-family="Inter, sans-serif" font-size="18" font-weight="700">Pnomatik Aktuator ve Vana</text>
+  <text x="300" y="377" text-anchor="middle" fill="#64748B" font-family="Inter, sans-serif" font-size="13">Cift Etkili / Yayli | ISO 5211 | 12-9000 Nm</text>
+</svg>

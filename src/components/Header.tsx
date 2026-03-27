@@ -3,10 +3,13 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useCart } from "@/context/CartContext";
+import { useLanguage } from "@/context/LanguageContext";
 import CartDrawer from "./CartDrawer";
+import LanguageSelector from "./LanguageSelector";
 
 export default function Header() {
   const { totalItems, isCartOpen, setIsCartOpen } = useCart();
+  const { t } = useLanguage();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
@@ -16,32 +19,42 @@ export default function Header() {
           <div className="flex items-center justify-between h-16 md:h-18">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary-600 to-accent-500 flex items-center justify-center">
-                <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c-1.2 0-2.4.6-3 1.5C8.4 3.6 7.2 3 6 3 3.8 3 2 4.8 2 7c0 4 5 8 10 13 5-5 10-9 10-13 0-2.2-1.8-4-4-4-1.2 0-2.4.6-3 1.5-.6-.9-1.8-1.5-3-1.5z" />
-                </svg>
+              <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="32" height="32" rx="8" fill="url(#logoGrad)"/>
+                <path d="M6 24C6 14 14 8 20 8" stroke="#60a5fa" strokeWidth="2.5" strokeLinecap="round"/>
+                <path d="M20 8C26 8 28 14 28 24" stroke="#38bdf8" strokeWidth="2.5" strokeLinecap="round"/>
+                <line x1="17" y1="24" x2="11" y2="12" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                <circle cx="17" cy="24" r="2" fill="#60a5fa"/>
+                <defs><linearGradient id="logoGrad" x1="0" y1="0" x2="32" y2="32"><stop stopColor="#1e3a8a"/><stop offset="1" stopColor="#1d4ed8"/></linearGradient></defs>
+              </svg>
+              <div className="flex flex-col leading-none">
+                <span className="text-lg font-extrabold bg-gradient-to-r from-primary-800 to-primary-500 bg-clip-text text-transparent">
+                  meoflow
+                </span>
+                <span className="text-[9px] font-medium text-gray-400 tracking-[0.2em] uppercase">
+                  industrial measurement
+                </span>
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-primary-700 to-primary-500 bg-clip-text text-transparent">
-                Meoflow
-              </span>
             </Link>
 
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center gap-1">
-              <NavLink href="/">Ana Sayfa</NavLink>
-              <NavLink href="/urunler">Ürünler</NavLink>
-              <NavLink href="/blog">Blog</NavLink>
-              <NavLink href="/hakkimizda">Hakkımızda</NavLink>
-              <NavLink href="/iletisim">İletişim</NavLink>
-              <NavLink href="/kargo-takip">Kargo Takip</NavLink>
+              <NavLink href="/">{t("nav.home")}</NavLink>
+              <NavLink href="/urunler">{t("nav.products")}</NavLink>
+              <NavLink href="/blog">{t("nav.blog")}</NavLink>
+              <NavLink href="/hakkimizda">{t("nav.about")}</NavLink>
+              <NavLink href="/iletisim">{t("nav.contact")}</NavLink>
+              <NavLink href="/kargo-takip">{t("nav.cargoTracking")}</NavLink>
             </nav>
 
-            {/* Cart + Mobile Toggle */}
-            <div className="flex items-center gap-3">
+            {/* Language Selector + Cart + Mobile Toggle */}
+            <div className="flex items-center gap-2 sm:gap-3">
+              <LanguageSelector />
+
               <button
                 onClick={() => setIsCartOpen(true)}
                 className="relative p-2 rounded-lg hover:bg-primary-50 transition-colors"
-                aria-label="Sepet"
+                aria-label={t("cart.myCart")}
               >
                 <svg className="w-6 h-6 text-primary-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
@@ -72,12 +85,12 @@ export default function Header() {
           {/* Mobile Nav */}
           {mobileOpen && (
             <nav className="md:hidden pb-4 border-t border-primary-100 pt-3 flex flex-col gap-1">
-              <MobileLink href="/" onClick={() => setMobileOpen(false)}>Ana Sayfa</MobileLink>
-              <MobileLink href="/urunler" onClick={() => setMobileOpen(false)}>Ürünler</MobileLink>
-              <MobileLink href="/blog" onClick={() => setMobileOpen(false)}>Blog</MobileLink>
-              <MobileLink href="/hakkimizda" onClick={() => setMobileOpen(false)}>Hakkımızda</MobileLink>
-              <MobileLink href="/iletisim" onClick={() => setMobileOpen(false)}>İletişim</MobileLink>
-              <MobileLink href="/kargo-takip" onClick={() => setMobileOpen(false)}>Kargo Takip</MobileLink>
+              <MobileLink href="/" onClick={() => setMobileOpen(false)}>{t("nav.home")}</MobileLink>
+              <MobileLink href="/urunler" onClick={() => setMobileOpen(false)}>{t("nav.products")}</MobileLink>
+              <MobileLink href="/blog" onClick={() => setMobileOpen(false)}>{t("nav.blog")}</MobileLink>
+              <MobileLink href="/hakkimizda" onClick={() => setMobileOpen(false)}>{t("nav.about")}</MobileLink>
+              <MobileLink href="/iletisim" onClick={() => setMobileOpen(false)}>{t("nav.contact")}</MobileLink>
+              <MobileLink href="/kargo-takip" onClick={() => setMobileOpen(false)}>{t("nav.cargoTracking")}</MobileLink>
             </nav>
           )}
         </div>

@@ -13,6 +13,10 @@ export interface Product {
   inStock: boolean;
   badge?: string;
   featured?: boolean;
+  industries: string[];
+  conditions: string[];
+  applications: string[];
+  installationTips: string[];
 }
 
 export interface CartItem {
