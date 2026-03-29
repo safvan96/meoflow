@@ -5,18 +5,20 @@ import { categories } from "@/data/categories";
 import { products } from "@/data/products";
 import { blogPosts } from "@/data/blogs";
 import ProductCard from "@/components/ProductCard";
+import { useLanguage } from "@/context/LanguageContext";
 
 const featuredProducts = products.filter((p) => p.featured);
 const latestPosts = blogPosts.slice(0, 3);
 
-const stats = [
-  { value: "15+", label: "Yıl Sektör Deneyimi" },
-  { value: "200+", label: "Endüstriyel Ürün" },
-  { value: "3.000+", label: "Mutlu Müşteri" },
-  { value: "40+", label: "İhracat Yapılan Ülke" },
-];
-
 export default function HomePage() {
+  const { t } = useLanguage();
+
+  const stats = [
+    { value: "15+", label: t("stats.yearsExperience") },
+    { value: "200+", label: t("stats.industrialProducts") },
+    { value: "3.000+", label: t("stats.happyCustomers") },
+    { value: "40+", label: t("stats.exportCountries") },
+  ];
   return (
     <>
       {/* ========== HERO SECTION ========== */}
@@ -42,22 +44,20 @@ export default function HomePage() {
             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6">
               <span className="w-2 h-2 bg-accent-400 rounded-full badge-pulse" />
               <span className="text-sm font-medium text-white/90">
-                Endüstriyel Ölçüm ve Kontrol Çözümleri
+                {t("home.heroBadge")}
               </span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">
-              Endüstriyel Ölçüm
+              {t("home.heroTitle1")}
               <br />
-              <span className="text-accent-400">Ekipmanlarında</span>
+              <span className="text-accent-400">{t("home.heroTitle2")}</span>
               <br />
-              Güvenilir Çözüm Ortağınız
+              {t("home.heroTitle3")}
             </h1>
 
             <p className="mt-6 text-lg sm:text-xl text-primary-100/90 max-w-2xl leading-relaxed">
-              Elektromanyetik debimetreler, seviye göstergeleri, basınç
-              transmitterleri ve sıcaklık sensörleri ile endüstriyel
-              proseslerinizi hassas ve güvenilir şekilde kontrol edin.
+              {t("home.heroDescription")}
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
@@ -65,7 +65,7 @@ export default function HomePage() {
                 href="/urunler"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-700 font-bold rounded-xl hover:bg-primary-50 transition-all shadow-lg shadow-black/10 hover:shadow-xl hover:shadow-black/15 active:scale-[0.98]"
               >
-                Ürünleri İncele
+                {t("hero.cta1")}
                 <svg
                   className="w-5 h-5"
                   fill="none"
@@ -97,7 +97,7 @@ export default function HomePage() {
                     d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
                   />
                 </svg>
-                İletişime Geç
+                {t("hero.cta2")}
               </Link>
             </div>
 
@@ -117,7 +117,7 @@ export default function HomePage() {
                     d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.745 3.745 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z"
                   />
                 </svg>
-                CE & ATEX Sertifikalı
+                {t("home.trustCertified")}
               </span>
               <span className="flex items-center gap-2">
                 <svg
@@ -133,7 +133,7 @@ export default function HomePage() {
                     d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0H6.375m11.25 0h3.375a1.125 1.125 0 0 0 1.125-1.125v-2.874m0 0a2.25 2.25 0 0 0-1.883-2.22l-3.238-.54a1.5 1.5 0 0 1-1.254-1.478V6.75A2.25 2.25 0 0 0 13.5 4.5h-3A2.25 2.25 0 0 0 8.25 6.75v1.378a1.5 1.5 0 0 1-1.254 1.478l-3.238.54A2.25 2.25 0 0 0 1.875 12v2.25"
                   />
                 </svg>
-                Ücretsiz Kargo
+                {t("home.trustFreeShipping")}
               </span>
               <span className="flex items-center gap-2">
                 <svg
@@ -149,7 +149,7 @@ export default function HomePage() {
                     d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25Z"
                   />
                 </svg>
-                Teknik Destek
+                {t("home.trustTechnical")}
               </span>
             </div>
           </div>
@@ -161,14 +161,13 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="inline-block px-3 py-1 bg-primary-50 text-primary-600 text-sm font-semibold rounded-full mb-4">
-              Ürün Kategorileri
+              {t("home.categoryBadge")}
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
-              Endüstriyel Çözümlerimiz
+              {t("home.categoriesTitle")}
             </h2>
             <p className="mt-4 text-gray-500 text-lg leading-relaxed">
-              Debi ölçümünden sıcaklık kontrolüne, basınç transmitterlerinden
-              seviye göstergelerine kadar kapsamlı endüstriyel ölçüm ekipmanları.
+              {t("home.categoriesSubtitle")}
             </p>
           </div>
 
@@ -187,7 +186,7 @@ export default function HomePage() {
                   {category.description}
                 </p>
                 <div className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary-600 group-hover:text-primary-700 transition-colors">
-                  Ürünleri Gör
+                  {t("home.viewProducts")}
                   <svg
                     className="w-4 h-4 group-hover:translate-x-1 transition-transform"
                     fill="none"
@@ -217,21 +216,20 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-12">
             <div>
               <span className="inline-block px-3 py-1 bg-primary-50 text-primary-600 text-sm font-semibold rounded-full mb-4">
-                Öne Çıkan Ürünler
+                {t("home.featuredBadge")}
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
-                En Çok Tercih Edilen Ürünler
+                {t("home.featuredTitle")}
               </h2>
               <p className="mt-3 text-gray-500 text-lg max-w-xl">
-                Müşterilerimizin en çok sipariş ettiği, endüstriyel
-                uygulamalarda kanıtlamış ürünlerimiz.
+                {t("home.featuredSubtitle")}
               </p>
             </div>
             <Link
               href="/urunler"
               className="mt-6 sm:mt-0 inline-flex items-center gap-2 text-primary-600 font-semibold hover:text-primary-800 transition-colors shrink-0"
             >
-              Tüm Ürünler
+              {t("product.allProducts")}
               <svg
                 className="w-5 h-5"
                 fill="none"
@@ -272,11 +270,10 @@ export default function HomePage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-              Rakamlarla Meoflow
+              {t("home.statsTitle")}
             </h2>
             <p className="mt-4 text-primary-100/80 text-lg max-w-xl mx-auto">
-              Yıllardır sürdürdüğümüz güvenilirlik ve kalite anlayışımız,
-              rakamlarımızda kendini gösteriyor.
+              {t("home.statsSubtitle")}
             </p>
           </div>
 
@@ -312,7 +309,7 @@ export default function HomePage() {
                   d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"
                 />
               </svg>
-              <span className="text-sm font-medium">ISO 9001 Kalite</span>
+              <span className="text-sm font-medium">{t("home.trustISO")}</span>
             </div>
             <div className="flex items-center gap-2">
               <svg
@@ -328,7 +325,7 @@ export default function HomePage() {
                   d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                 />
               </svg>
-              <span className="text-sm font-medium">7/24 Teknik Destek</span>
+              <span className="text-sm font-medium">{t("home.trust247")}</span>
             </div>
             <div className="flex items-center gap-2">
               <svg
@@ -344,7 +341,7 @@ export default function HomePage() {
                   d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0H6.375m11.25 0h3.375a1.125 1.125 0 0 0 1.125-1.125v-2.874m0 0a2.25 2.25 0 0 0-1.883-2.22l-3.238-.54a1.5 1.5 0 0 1-1.254-1.478V6.75A2.25 2.25 0 0 0 13.5 4.5h-3A2.25 2.25 0 0 0 8.25 6.75v1.378a1.5 1.5 0 0 1-1.254 1.478l-3.238.54A2.25 2.25 0 0 0 1.875 12v2.25"
                 />
               </svg>
-              <span className="text-sm font-medium">Hızlı Kargo</span>
+              <span className="text-sm font-medium">{t("home.trustShipping")}</span>
             </div>
             <div className="flex items-center gap-2">
               <svg
@@ -360,7 +357,7 @@ export default function HomePage() {
                   d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.049.58.025 1.194-.14 1.743"
                 />
               </svg>
-              <span className="text-sm font-medium">2 Yıl Garanti</span>
+              <span className="text-sm font-medium">{t("home.trustWarranty")}</span>
             </div>
           </div>
         </div>
@@ -372,21 +369,20 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-12">
             <div>
               <span className="inline-block px-3 py-1 bg-primary-50 text-primary-600 text-sm font-semibold rounded-full mb-4">
-                Blog & Rehberler
+                {t("home.blogBadge")}
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
-                Teknik Yazılar ve Rehberler
+                {t("home.blogTitle")}
               </h2>
               <p className="mt-3 text-gray-500 text-lg max-w-xl">
-                Endüstriyel ölçüm ekipmanları hakkında teknik bilgiler, seçim
-                rehberleri ve uygulama ipuçları.
+                {t("home.blogSubtitle")}
               </p>
             </div>
             <Link
               href="/blog"
               className="mt-6 sm:mt-0 inline-flex items-center gap-2 text-primary-600 font-semibold hover:text-primary-800 transition-colors shrink-0"
             >
-              Tüm Yazılar
+              {t("home.allPosts")}
               <svg
                 className="w-5 h-5"
                 fill="none"
@@ -432,7 +428,7 @@ export default function HomePage() {
                   <div className="flex items-center gap-3 text-xs text-gray-400 mb-3">
                     <span>{post.date}</span>
                     <span className="w-1 h-1 rounded-full bg-gray-300" />
-                    <span>{post.readTime} dk okuma</span>
+                    <span>{post.readTime} {t("blog.readTime")}</span>
                   </div>
 
                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-primary-700 transition-colors leading-snug line-clamp-2">
@@ -471,14 +467,10 @@ export default function HomePage() {
 
             <div className="relative">
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                Projeniz İçin Doğru Ekipmanı
-                <br />
-                Birlikte Belirleyelim
+                {t("home.ctaTitle")}
               </h2>
               <p className="mt-5 text-primary-100/80 text-lg max-w-xl mx-auto leading-relaxed">
-                Uzman mühendislik ekibimiz, uygulamanıza en uygun ölçüm ve
-                kontrol ekipmanını seçmenizde size yardımcı olmaya hazır.
-                Ücretsiz teknik danışmanlık için hemen iletişime geçin.
+                {t("home.ctaSubtitle")}
               </p>
 
               <div className="mt-10 flex flex-wrap justify-center gap-4">
@@ -499,7 +491,7 @@ export default function HomePage() {
                       d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
                     />
                   </svg>
-                  Teklif İsteyin
+                  {t("home.ctaButton")}
                 </Link>
                 <a
                   href="tel:+908501234567"

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Product } from "@/types";
 import { useCart } from "@/context/CartContext";
+import { useLanguage } from "@/context/LanguageContext";
 import ProductCard from "@/components/ProductCard";
 
 interface ProductDetailContentProps {
@@ -16,6 +17,7 @@ export default function ProductDetailContent({
   relatedProducts,
 }: ProductDetailContentProps) {
   const { addToCart, exchangeRate, rateSource } = useCart();
+  const { t } = useLanguage();
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState<"description" | "specs">(
     "description"
@@ -39,7 +41,7 @@ export default function ProductDetailContent({
               href="/"
               className="hover:text-primary-600 transition-colors whitespace-nowrap"
             >
-              Ana Sayfa
+              {t("product.breadcrumbHome")}
             </Link>
             <svg
               className="w-4 h-4 shrink-0"
@@ -58,7 +60,7 @@ export default function ProductDetailContent({
               href="/urunler"
               className="hover:text-primary-600 transition-colors whitespace-nowrap"
             >
-              Ürünler
+              {t("nav.products")}
             </Link>
             <svg
               className="w-4 h-4 shrink-0"
@@ -137,12 +139,12 @@ export default function ProductDetailContent({
               {product.inStock ? (
                 <span className="flex items-center gap-1.5 px-3 py-1.5 bg-green-50 border border-green-200 text-green-700 text-xs font-medium rounded-lg">
                   <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                  Stokta
+                  {t("product.stock")}
                 </span>
               ) : (
                 <span className="flex items-center gap-1.5 px-3 py-1.5 bg-red-50 border border-red-200 text-red-700 text-xs font-medium rounded-lg">
                   <span className="w-2 h-2 bg-red-500 rounded-full"></span>
-                  Stokta Yok
+                  {t("product.outOfStock")}
                 </span>
               )}
             </div>
@@ -198,7 +200,7 @@ export default function ProductDetailContent({
                 </span>
               </div>
               <p className="mt-1 text-xs text-gray-500">
-                Fiyatlar KDV hariç | {rateSource === "TCMB" ? "TCMB Günlük Kur" : "Güncel Döviz Kuru"}:{" "}
+                {t("product.priceNote")} | {rateSource === "TCMB" ? t("product.tcmbRate") : t("product.estimatedRate")}:{" "}
                 {exchangeRate.toFixed(2)} TL/USD
               </p>
             </div>
@@ -265,7 +267,7 @@ export default function ProductDetailContent({
                     d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
                   />
                 </svg>
-                Sepete Ekle
+                {t("cart.addToCart")}
                 {quantity > 1 && (
                   <span className="text-primary-200">
                     ({totalPrice.toLocaleString("tr-TR", { maximumFractionDigits: 0 })} TL)
@@ -304,7 +306,7 @@ export default function ProductDetailContent({
                   : "text-gray-500 border-transparent hover:text-gray-700"
               }`}
             >
-              Ürün Açıklaması
+              {t("product.description")}
             </button>
             <button
               onClick={() => setActiveTab("specs")}
@@ -314,7 +316,7 @@ export default function ProductDetailContent({
                   : "text-gray-500 border-transparent hover:text-gray-700"
               }`}
             >
-              Teknik Özellikler
+              {t("product.specs")}
             </button>
           </div>
 
@@ -336,10 +338,10 @@ export default function ProductDetailContent({
                   <thead>
                     <tr>
                       <th className="text-left text-xs font-semibold text-gray-500 uppercase tracking-wider pb-3 border-b border-gray-200">
-                        Özellik
+                        {t("product.feature")}
                       </th>
                       <th className="text-left text-xs font-semibold text-gray-500 uppercase tracking-wider pb-3 border-b border-gray-200">
-                        Değer
+                        {t("product.value")}
                       </th>
                     </tr>
                   </thead>
@@ -382,7 +384,7 @@ export default function ProductDetailContent({
                       <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900">Kullanım Alanları</h3>
+                  <h3 className="text-lg font-bold text-gray-900">{t("product.industries")}</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {product.industries.map((industry, idx) => (
@@ -403,7 +405,7 @@ export default function ProductDetailContent({
                       <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.049.58.025 1.194-.14 1.743" />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900">Çalışma Koşulları</h3>
+                  <h3 className="text-lg font-bold text-gray-900">{t("product.conditions")}</h3>
                 </div>
                 <ul className="space-y-2">
                   {product.conditions.map((condition, idx) => (
@@ -427,7 +429,7 @@ export default function ProductDetailContent({
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 0 1 4.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0 1 12 15a9.065 9.065 0 0 0-6.23-.693L5 14.5m14.8.8 1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0 1 12 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900">Uygulamalar</h3>
+                  <h3 className="text-lg font-bold text-gray-900">{t("product.applications")}</h3>
                 </div>
                 <ul className="space-y-2">
                   {product.applications.map((app, idx) => (
@@ -449,7 +451,7 @@ export default function ProductDetailContent({
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900">Kurulum İpuçları</h3>
+                  <h3 className="text-lg font-bold text-gray-900">{t("product.installationTips")}</h3>
                 </div>
                 <ul className="space-y-2">
                   {product.installationTips.map((tip, idx) => (
@@ -477,7 +479,7 @@ export default function ProductDetailContent({
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5.636 5.636a9 9 0 1 0 12.728 0M12 3v9" />
                 </svg>
               </div>
-              <h3 className="text-lg font-bold text-gray-900">Kablaj ve Bağlantı Kılavuzu</h3>
+              <h3 className="text-lg font-bold text-gray-900">{t("product.wiringGuide")}</h3>
             </div>
             <div className="text-sm text-gray-600 leading-relaxed space-y-2">
               {product.wiringGuide.split("\n").map((p, i) => (
@@ -498,8 +500,8 @@ export default function ProductDetailContent({
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-bold text-gray-900">Sık Yapılan Hatalar</h3>
-              <span className="text-xs text-red-500 font-medium bg-red-50 px-2 py-0.5 rounded-full">Dikkat</span>
+              <h3 className="text-lg font-bold text-gray-900">{t("product.commonMistakes")}</h3>
+              <span className="text-xs text-red-500 font-medium bg-red-50 px-2 py-0.5 rounded-full">{t("product.warning")}</span>
             </div>
             <ul className="space-y-3">
               {product.commonMistakes.map((mistake, idx) => (
@@ -525,7 +527,7 @@ export default function ProductDetailContent({
                   <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.049.58.025 1.194-.14 1.743" />
                 </svg>
               </div>
-              <h3 className="text-lg font-bold text-gray-900">Bakım ve Periyodik Kontrol</h3>
+              <h3 className="text-lg font-bold text-gray-900">{t("product.maintenance")}</h3>
             </div>
             <ul className="space-y-2">
               {product.maintenanceNotes.map((note, idx) => (
@@ -548,17 +550,17 @@ export default function ProductDetailContent({
             <div className="flex items-center justify-between mb-8">
               <div>
                 <h2 className="text-2xl font-bold text-gray-900">
-                  Benzer Ürünler
+                  {t("product.similarProducts")}
                 </h2>
                 <p className="text-sm text-gray-500 mt-1">
-                  {product.category} kategorisindeki diğer ürünler
+                  {product.category} {t("product.otherProducts")}
                 </p>
               </div>
               <Link
                 href={`/urunler/kategori/${product.categorySlug}`}
                 className="hidden sm:flex items-center gap-1.5 text-sm font-medium text-primary-600 hover:text-primary-700 transition-colors"
               >
-                Tümünü Gör
+                {t("common.viewAll")}
                 <svg
                   className="w-4 h-4"
                   fill="none"

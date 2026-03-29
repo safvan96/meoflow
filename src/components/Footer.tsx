@@ -1,6 +1,11 @@
+"use client";
+
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-primary-950 text-gray-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
@@ -22,38 +27,37 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
-              Endüstriyel ölçüm ve kontrol ekipmanlarında güvenilir çözüm ortağınız.
-              Debimetre, seviye sensörü, basınç transmitteri ve proses kontrol cihazları.
+              {t("footer.description")}
             </p>
           </div>
 
           {/* Products */}
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Ürünler</h3>
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">{t("footer.products")}</h3>
             <ul className="space-y-2.5">
-              <FooterLink href="/urunler/kategori/elektromanyetik-debimetreler">Elektromanyetik Debimetreler</FooterLink>
-              <FooterLink href="/urunler/kategori/manyetik-bypass-seviye-gostergeleri">Manyetik Bypass Göstergeler</FooterLink>
-              <FooterLink href="/urunler/kategori/basinc-transmitterleri">Basınç Transmitterleri</FooterLink>
-              <FooterLink href="/urunler/kategori/sicaklik-sensorleri">Sıcaklık Sensörleri</FooterLink>
-              <FooterLink href="/urunler/kategori/seviye-sensorleri">Seviye Sensörleri</FooterLink>
-              <FooterLink href="/urunler/kategori/proses-kontrol-cihazlari">Proses Kontrol</FooterLink>
+              <FooterLink href="/urunler/kategori/elektromanyetik-debimetreler">{t("category.electromagneticFlowmeters")}</FooterLink>
+              <FooterLink href="/urunler/kategori/manyetik-bypass-seviye-gostergeleri">{t("category.magneticBypassIndicators")}</FooterLink>
+              <FooterLink href="/urunler/kategori/basinc-transmitterleri">{t("category.pressureTransmitters")}</FooterLink>
+              <FooterLink href="/urunler/kategori/sicaklik-sensorleri">{t("category.temperatureSensors")}</FooterLink>
+              <FooterLink href="/urunler/kategori/seviye-sensorleri">{t("category.levelSensors")}</FooterLink>
+              <FooterLink href="/urunler/kategori/proses-kontrol-cihazlari">{t("category.processControl")}</FooterLink>
             </ul>
           </div>
 
           {/* Company */}
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Kurumsal</h3>
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">{t("footer.corporate")}</h3>
             <ul className="space-y-2.5">
-              <FooterLink href="/hakkimizda">Hakkımızda</FooterLink>
-              <FooterLink href="/blog">Blog</FooterLink>
-              <FooterLink href="/iletisim">İletişim</FooterLink>
-              <FooterLink href="/kargo-takip">Kargo Takip</FooterLink>
+              <FooterLink href="/hakkimizda">{t("nav.about")}</FooterLink>
+              <FooterLink href="/blog">{t("nav.blog")}</FooterLink>
+              <FooterLink href="/iletisim">{t("nav.contact")}</FooterLink>
+              <FooterLink href="/kargo-takip">{t("nav.cargoTracking")}</FooterLink>
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">İletişim</h3>
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">{t("footer.contact")}</h3>
             <ul className="space-y-3 text-sm text-gray-400">
               <li className="flex items-start gap-2">
                 <svg className="w-4 h-4 mt-0.5 text-primary-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -80,12 +84,12 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-primary-900 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-gray-500">
-            &copy; {new Date().getFullYear()} Meoflow. Tüm hakları saklıdır.
+            &copy; {new Date().getFullYear()} Meoflow. {t("footer.rights")}
           </p>
           <div className="flex items-center gap-4 text-xs text-gray-500">
-            <span>Fiyatlar KDV haricdir</span>
+            <span>{t("footer.pricesExcludeVAT")}</span>
             <span>|</span>
-            <span>Döviz kuru günlük güncellenir</span>
+            <span>{t("footer.exchangeRateUpdatedDaily")}</span>
           </div>
         </div>
       </div>

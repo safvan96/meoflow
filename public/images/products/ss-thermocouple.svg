@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <defs>
+    <linearGradient id="sheath" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6B7280"/>
+      <stop offset="25%" stop-color="#D1D5DB"/>
+      <stop offset="50%" stop-color="#E5E7EB"/>
+      <stop offset="75%" stop-color="#D1D5DB"/>
+      <stop offset="100%" stop-color="#6B7280"/>
+    </linearGradient>
+    <linearGradient id="conn-head" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E40AF"/>
+      <stop offset="50%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#1E3A8A"/>
+    </linearGradient>
+    <linearGradient id="nicr-wire" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#DC2626"/>
+      <stop offset="100%" stop-color="#EF4444"/>
+    </linearGradient>
+    <linearGradient id="nial-wire" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="120%">
+      <feDropShadow dx="2" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="400" rx="12" fill="#F8FAFC"/>
+
+  <!-- Connection head (top, KNE type) -->
+  <rect x="160" y="40" width="100" height="80" rx="8" fill="url(#conn-head)" filter="url(#shadow)"/>
+  <!-- Head lid -->
+  <rect x="165" y="35" width="90" height="12" rx="4" fill="#1E3A8A"/>
+  <!-- Screws on lid -->
+  <circle cx="180" cy="41" r="3" fill="#374151" stroke="#4B5563" stroke-width="0.5"/>
+  <circle cx="240" cy="41" r="3" fill="#374151" stroke="#4B5563" stroke-width="0.5"/>
+
+  <!-- Terminal block inside head (cutaway view) -->
+  <rect x="175" y="58" width="70" height="45" rx="4" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+  <!-- Terminal screws -->
+  <circle cx="195" cy="72" r="5" fill="#D1D5DB" stroke="#9CA3AF" stroke-width="1"/>
+  <text x="195" y="75" text-anchor="middle" fill="#374151" font-size="5" font-weight="bold">+</text>
+  <circle cx="225" cy="72" r="5" fill="#D1D5DB" stroke="#9CA3AF" stroke-width="1"/>
+  <text x="225" y="75" text-anchor="middle" fill="#374151" font-size="5" font-weight="bold">-</text>
+  <!-- Wire connections to terminals -->
+  <line x1="195" y1="77" x2="195" y2="95" stroke="#EF4444" stroke-width="2"/>
+  <line x1="225" y1="77" x2="225" y2="95" stroke="#3B82F6" stroke-width="2"/>
+  <!-- Labels -->
+  <text x="195" y="63" text-anchor="middle" fill="#DC2626" font-family="monospace" font-size="6">NiCr</text>
+  <text x="225" y="63" text-anchor="middle" fill="#2563EB" font-family="monospace" font-size="6">NiAl</text>
+
+  <!-- Cable entry gland -->
+  <rect x="155" y="65" width="14" height="20" rx="3" fill="#374151"/>
+  <rect x="143" y="70" width="16" height="10" rx="2" fill="#4B5563"/>
+
+  <!-- Protective sheath / probe body (vertical, long) -->
+  <rect x="200" y="118" width="20" height="210" rx="3" fill="url(#sheath)" filter="url(#shadow)"/>
+
+  <!-- Cutaway section showing internal wires -->
+  <rect x="203" y="140" width="14" height="140" rx="2" fill="#F1F5F9" opacity="0.6"/>
+  <!-- NiCr wire (red/positive) -->
+  <line x1="207" y1="98" x2="207" y2="318" stroke="#EF4444" stroke-width="2.5" stroke-dasharray="0"/>
+  <!-- NiAl wire (blue/negative) -->
+  <line x1="213" y1="98" x2="213" y2="318" stroke="#3B82F6" stroke-width="2.5"/>
+
+  <!-- Hot junction point at tip -->
+  <circle cx="210" cy="324" r="8" fill="#FBBF24" stroke="#F59E0B" stroke-width="2" filter="url(#shadow)"/>
+  <circle cx="210" cy="324" r="4" fill="#FDE68A"/>
+  <!-- Junction wires meeting -->
+  <line x1="207" y1="318" x2="210" y2="324" stroke="#EF4444" stroke-width="2"/>
+  <line x1="213" y1="318" x2="210" y2="324" stroke="#3B82F6" stroke-width="2"/>
+
+  <!-- Thermowell thread (process connection) -->
+  <rect x="192" y="116" width="36" height="20" rx="2" fill="url(#sheath)"/>
+  <line x1="192" y1="122" x2="228" y2="122" stroke="#9CA3AF" stroke-width="0.5"/>
+  <line x1="192" y1="126" x2="228" y2="126" stroke="#9CA3AF" stroke-width="0.5"/>
+  <line x1="192" y1="130" x2="228" y2="130" stroke="#9CA3AF" stroke-width="0.5"/>
+  <!-- Hex nut -->
+  <polygon points="187,120 193,114 227,114 233,120 227,126 193,126" fill="url(#sheath)" stroke="#6B7280" stroke-width="0.8"/>
+
+  <!-- Heat indicator at tip -->
+  <path d="M195 340 Q200 335 205 342" stroke="#F97316" stroke-width="1" fill="none" opacity="0.6"/>
+  <path d="M215 340 Q220 335 225 342" stroke="#F97316" stroke-width="1" fill="none" opacity="0.6"/>
+  <path d="M205 345 Q210 340 215 347" stroke="#F97316" stroke-width="1" fill="none" opacity="0.6"/>
+
+  <!-- Right side: Thermocouple principle diagram -->
+  <rect x="310" y="50" width="250" height="160" rx="8" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="435" y="72" text-anchor="middle" fill="#475569" font-family="Inter, sans-serif" font-size="11" font-weight="600">K Tipi Termokupl Yapisi</text>
+
+  <!-- Diagram: Two wires joining -->
+  <line x1="340" y1="100" x2="420" y2="140" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
+  <line x1="530" y1="100" x2="420" y2="140" stroke="#3B82F6" stroke-width="3" stroke-linecap="round"/>
+  <!-- Junction point -->
+  <circle cx="420" cy="140" r="6" fill="#FBBF24" stroke="#F59E0B" stroke-width="1.5"/>
+  <!-- Labels -->
+  <text x="360" y="96" fill="#DC2626" font-family="Inter, sans-serif" font-size="9" font-weight="600">NiCr (+)</text>
+  <text x="490" y="96" fill="#2563EB" font-family="Inter, sans-serif" font-size="9" font-weight="600">NiAl (-)</text>
+  <text x="420" y="162" text-anchor="middle" fill="#F59E0B" font-family="Inter, sans-serif" font-size="9" font-weight="600">Sicak Birlesim</text>
+
+  <!-- Seebeck effect arrow -->
+  <path d="M380 190 L460 190 L455 185 M460 190 L455 195" stroke="#475569" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <text x="420" y="205" text-anchor="middle" fill="#475569" font-family="monospace" font-size="8">EMF (mV)</text>
+
+  <!-- Temperature range -->
+  <rect x="310" y="230" width="250" height="40" rx="6" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="435" y="248" text-anchor="middle" fill="#475569" font-family="Inter, sans-serif" font-size="9" font-weight="600">Olcum Araligi</text>
+  <text x="435" y="264" text-anchor="middle" fill="#1E40AF" font-family="monospace" font-size="11">-200°C ~ +1260°C</text>
+
+  <!-- Labels -->
+  <text x="300" y="370" text-anchor="middle" fill="#1E40AF" font-family="Inter, sans-serif" font-size="18" font-weight="700">K Tipi Termokupl</text>
+  <text x="300" y="392" text-anchor="middle" fill="#64748B" font-family="Inter, sans-serif" font-size="12">NiCr-NiAl | -200~1260°C | Korumali Kilif</text>
+</svg>

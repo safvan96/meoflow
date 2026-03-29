@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
+import { useLanguage } from "@/context/LanguageContext";
 
 const SHIPPING_THRESHOLD = 50000;
 const SHIPPING_COST = 499.99;
@@ -16,6 +17,7 @@ export default function SepetPage() {
     totalPrice,
     exchangeRate,
   } = useCart();
+  const { t } = useLanguage();
 
   const [showCheckout, setShowCheckout] = useState(false);
   const [orderComplete, setOrderComplete] = useState(false);
@@ -63,27 +65,26 @@ export default function SepetPage() {
             </svg>
           </div>
           <h1 className="text-2xl font-bold text-gray-900 mb-3">
-            Siparisiniz Alindi!
+            {t("checkout.orderReceived")}
           </h1>
           <p className="text-gray-500 mb-2">
-            Siparisiz basariyla olusturuldu. En kisa surede hazirlayip kargoya
-            verecegiz.
+            {t("checkout.orderSuccess")}
           </p>
           <p className="text-sm text-gray-400 mb-8">
-            Siparis detaylari e-posta adresinize gonderilecektir.
+            {t("checkout.orderEmailNote")}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               href="/kargo-takip"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary-600 text-white font-semibold rounded-xl hover:bg-primary-700 transition-colors"
             >
-              Kargo Takip
+              {t("nav.cargoTracking")}
             </Link>
             <Link
               href="/urunler"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gray-100 text-gray-700 font-semibold rounded-xl hover:bg-gray-200 transition-colors"
             >
-              Alisverise Devam Et
+              {t("cart.continueShopping")}
             </Link>
           </div>
         </div>
@@ -97,7 +98,7 @@ export default function SepetPage() {
         <section className="hero-gradient text-white py-14 md:py-18">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
             <h1 className="text-3xl md:text-4xl font-extrabold mb-4">
-              Sepetiniz
+              {t("cart.yourCart")}
             </h1>
           </div>
         </section>
@@ -118,17 +119,16 @@ export default function SepetPage() {
             </svg>
           </div>
           <h2 className="text-xl font-bold text-gray-900 mb-2">
-            Sepetiniz Bos
+            {t("cart.emptyCart")}
           </h2>
           <p className="text-gray-500 mb-6">
-            Henuz sepetinize urun eklemediniz. Urunlerimizi inceleyerek
-            baslamaya ne dersiniz?
+            {t("cart.emptyCartDescription")}
           </p>
           <Link
             href="/urunler"
             className="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 text-white font-semibold rounded-xl hover:bg-primary-700 transition-colors"
           >
-            Urunleri Incele
+            {t("cart.browseProducts")}
             <svg
               className="w-5 h-5"
               fill="none"
@@ -154,10 +154,10 @@ export default function SepetPage() {
       <section className="hero-gradient text-white py-14 md:py-18">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
           <h1 className="text-3xl md:text-4xl font-extrabold mb-2">
-            Sepetiniz
+            {t("cart.yourCart")}
           </h1>
           <p className="text-primary-100">
-            {items.length} urun | Toplam:{" "}
+            {items.length} {t("cart.items")} | {t("cart.total")}:{" "}
             {grandTotal.toLocaleString("tr-TR", {
               minimumFractionDigits: 2,
               maximumFractionDigits: 2,
@@ -187,9 +187,8 @@ export default function SepetPage() {
                 />
               </svg>
               <div className="text-sm text-primary-700">
-                <span className="font-semibold">Doviz Kuru:</span> 1 USD ={" "}
-                {exchangeRate.toFixed(2)} TL | Fiyatlar KDV haric olup, gunluk
-                kur uzerinden hesaplanmaktadir.
+                <span className="font-semibold">{t("common.exchangeRate")}:</span> 1 USD ={" "}
+                {exchangeRate.toFixed(2)} TL | {t("cart.exchangeRateNote")}
               </div>
             </div>
 
@@ -293,7 +292,7 @@ export default function SepetPage() {
                               minimumFractionDigits: 2,
                               maximumFractionDigits: 2,
                             })}{" "}
-                            TL / adet
+                            TL {t("cart.perItem")}
                           </div>
                           <div className="text-lg font-bold text-primary-700">
                             {lineTotalTL.toLocaleString("tr-TR", {
@@ -332,7 +331,7 @@ export default function SepetPage() {
                     d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
                   />
                 </svg>
-                Sepeti Temizle
+                {t("cart.clearCart")}
               </button>
             </div>
           </div>
@@ -342,12 +341,12 @@ export default function SepetPage() {
             {/* Summary Card */}
             <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sticky top-24">
               <h3 className="text-lg font-bold text-gray-900 mb-5">
-                Siparis Ozeti
+                {t("cart.orderSummary")}
               </h3>
 
               <div className="space-y-3 text-sm">
                 <div className="flex justify-between text-gray-600">
-                  <span>Ara Toplam</span>
+                  <span>{t("cart.subtotal")}</span>
                   <span className="font-medium text-gray-900">
                     {totalPrice.toLocaleString("tr-TR", {
                       minimumFractionDigits: 2,
@@ -358,9 +357,9 @@ export default function SepetPage() {
                 </div>
 
                 <div className="flex justify-between text-gray-600">
-                  <span>Kargo</span>
+                  <span>{t("cart.shipping")}</span>
                   {shipping === 0 ? (
-                    <span className="font-medium text-green-600">Ucretsiz</span>
+                    <span className="font-medium text-green-600">{t("cart.freeShipping")}</span>
                   ) : (
                     <span className="font-medium text-gray-900">
                       {shipping.toLocaleString("tr-TR", {
@@ -378,12 +377,12 @@ export default function SepetPage() {
                       minimumFractionDigits: 2,
                       maximumFractionDigits: 2,
                     })}{" "}
-                    TL daha alisveris yapin, kargo bedava!
+                    {t("cart.moreForFreeShipping")}
                   </div>
                 )}
 
                 <div className="border-t border-gray-100 pt-3 flex justify-between">
-                  <span className="font-semibold text-gray-900">Toplam</span>
+                  <span className="font-semibold text-gray-900">{t("cart.total")}</span>
                   <div className="text-right">
                     <span className="text-xl font-bold text-primary-700">
                       {grandTotal.toLocaleString("tr-TR", {
@@ -393,7 +392,7 @@ export default function SepetPage() {
                       TL
                     </span>
                     <div className="text-xs text-gray-400 mt-0.5">
-                      KDV Haric
+                      {t("cart.vatExcluded")}
                     </div>
                   </div>
                 </div>
@@ -404,7 +403,7 @@ export default function SepetPage() {
                   onClick={() => setShowCheckout(true)}
                   className="w-full mt-6 py-3 bg-primary-600 text-white font-semibold rounded-xl hover:bg-primary-700 transition-colors flex items-center justify-center gap-2"
                 >
-                  Siparisi Tamamla
+                  {t("checkout.completeOrder")}
                   <svg
                     className="w-5 h-5"
                     fill="none"
@@ -438,7 +437,7 @@ export default function SepetPage() {
                     d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
                   />
                 </svg>
-                Alisverise Devam Et
+                {t("cart.continueShopping")}
               </Link>
             </div>
           </div>
@@ -449,7 +448,7 @@ export default function SepetPage() {
           <div className="mt-10 max-w-2xl mx-auto">
             <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8">
               <h2 className="text-xl font-bold text-gray-900 mb-6">
-                Teslimat Bilgileri
+                {t("checkout.deliveryInfo")}
               </h2>
               <form onSubmit={handleOrder} className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-5">
@@ -458,7 +457,7 @@ export default function SepetPage() {
                       htmlFor="name"
                       className="block text-sm font-medium text-gray-700 mb-1.5"
                     >
-                      Ad Soyad <span className="text-red-500">*</span>
+                      {t("checkout.fullName")} <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
@@ -476,7 +475,7 @@ export default function SepetPage() {
                       htmlFor="checkout-email"
                       className="block text-sm font-medium text-gray-700 mb-1.5"
                     >
-                      E-posta <span className="text-red-500">*</span>
+                      {t("checkout.email")} <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="email"
@@ -496,7 +495,7 @@ export default function SepetPage() {
                     htmlFor="checkout-phone"
                     className="block text-sm font-medium text-gray-700 mb-1.5"
                   >
-                    Telefon <span className="text-red-500">*</span>
+                    {t("checkout.phone")} <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="tel"
@@ -515,7 +514,7 @@ export default function SepetPage() {
                     htmlFor="address"
                     className="block text-sm font-medium text-gray-700 mb-1.5"
                   >
-                    Adres <span className="text-red-500">*</span>
+                    {t("checkout.address")} <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
@@ -535,7 +534,7 @@ export default function SepetPage() {
                       htmlFor="city"
                       className="block text-sm font-medium text-gray-700 mb-1.5"
                     >
-                      Il <span className="text-red-500">*</span>
+                      {t("checkout.city")} <span className="text-red-500">*</span>
                     </label>
                     <select
                       id="city"
@@ -545,7 +544,7 @@ export default function SepetPage() {
                       onChange={handleChange}
                       className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-gray-50 hover:bg-white transition-all"
                     >
-                      <option value="">Il secin...</option>
+                      <option value="">{t("checkout.selectCity")}</option>
                       <option value="istanbul">Istanbul</option>
                       <option value="ankara">Ankara</option>
                       <option value="izmir">Izmir</option>
@@ -556,7 +555,7 @@ export default function SepetPage() {
                       <option value="adana">Adana</option>
                       <option value="gaziantep">Gaziantep</option>
                       <option value="mersin">Mersin</option>
-                      <option value="diger">Diger</option>
+                      <option value="diger">{t("checkout.other")}</option>
                     </select>
                   </div>
                   <div>
@@ -564,7 +563,7 @@ export default function SepetPage() {
                       htmlFor="district"
                       className="block text-sm font-medium text-gray-700 mb-1.5"
                     >
-                      Ilce <span className="text-red-500">*</span>
+                      {t("checkout.district")} <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
@@ -582,7 +581,7 @@ export default function SepetPage() {
                 {/* Order Summary Mini */}
                 <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
                   <div className="flex justify-between text-sm mb-2">
-                    <span className="text-gray-600">Urun Toplam</span>
+                    <span className="text-gray-600">{t("cart.productTotal")}</span>
                     <span className="font-medium">
                       {totalPrice.toLocaleString("tr-TR", {
                         minimumFractionDigits: 2,
@@ -592,10 +591,10 @@ export default function SepetPage() {
                     </span>
                   </div>
                   <div className="flex justify-between text-sm mb-2">
-                    <span className="text-gray-600">Kargo</span>
+                    <span className="text-gray-600">{t("cart.shipping")}</span>
                     <span className="font-medium">
                       {shipping === 0
-                        ? "Ucretsiz"
+                        ? t("cart.freeShipping")
                         : `${shipping.toLocaleString("tr-TR", {
                             minimumFractionDigits: 2,
                           })} TL`}
@@ -603,7 +602,7 @@ export default function SepetPage() {
                   </div>
                   <div className="border-t border-gray-200 pt-2 flex justify-between">
                     <span className="font-bold text-gray-900">
-                      Genel Toplam
+                      {t("cart.grandTotal")}
                     </span>
                     <span className="font-bold text-primary-700 text-lg">
                       {grandTotal.toLocaleString("tr-TR", {
@@ -632,7 +631,7 @@ export default function SepetPage() {
                       d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                     />
                   </svg>
-                  Siparisi Tamamla
+                  {t("checkout.completeOrder")}
                 </button>
               </form>
             </div>

@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <defs>
+    <linearGradient id="stem" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6B7280"/>
+      <stop offset="25%" stop-color="#D1D5DB"/>
+      <stop offset="50%" stop-color="#E5E7EB"/>
+      <stop offset="75%" stop-color="#D1D5DB"/>
+      <stop offset="100%" stop-color="#6B7280"/>
+    </linearGradient>
+    <linearGradient id="float-ball" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F97316"/>
+      <stop offset="30%" stop-color="#FBBF24"/>
+      <stop offset="70%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0EA5E9" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#0369A1" stop-opacity="0.6"/>
+    </linearGradient>
+    <linearGradient id="tank-wall" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4B5563"/>
+      <stop offset="50%" stop-color="#6B7280"/>
+      <stop offset="100%" stop-color="#4B5563"/>
+    </linearGradient>
+    <linearGradient id="housing-blue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E40AF"/>
+      <stop offset="50%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#1E3A8A"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="120%">
+      <feDropShadow dx="2" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="400" rx="12" fill="#F8FAFC"/>
+
+  <!-- Tank outline -->
+  <rect x="120" y="70" width="260" height="260" rx="8" fill="none" stroke="url(#tank-wall)" stroke-width="3" stroke-dasharray="8 4" opacity="0.5"/>
+  <text x="250" y="62" text-anchor="middle" fill="#94A3B8" font-family="Inter, sans-serif" font-size="11">TANK</text>
+
+  <!-- Water level inside tank -->
+  <rect x="124" y="200" width="252" height="126" rx="5" fill="url(#water)"/>
+  <!-- Water level line -->
+  <line x1="124" y1="200" x2="376" y2="200" stroke="#0EA5E9" stroke-width="1.5" stroke-dasharray="6 3"/>
+  <text x="390" y="204" fill="#0EA5E9" font-family="monospace" font-size="9">Su Seviyesi</text>
+
+  <!-- Mounting bracket on tank top -->
+  <rect x="230" y="62" width="40" height="16" rx="2" fill="#6B7280"/>
+  <rect x="220" y="58" width="60" height="8" rx="2" fill="#4B5563" filter="url(#shadow)"/>
+  <!-- Mounting bolts -->
+  <circle cx="228" cy="62" r="3" fill="#374151"/>
+  <circle cx="272" cy="62" r="3" fill="#374151"/>
+
+  <!-- Stem/rod (vertical, through tank) -->
+  <rect x="245" y="72" width="10" height="250" rx="2" fill="url(#stem)" filter="url(#shadow)"/>
+
+  <!-- Cutaway section showing reed switch inside stem -->
+  <rect x="247" y="175" width="6" height="40" rx="1" fill="#F1F5F9"/>
+  <!-- Reed switch (small glass tube) -->
+  <rect x="248" y="185" width="4" height="20" rx="1" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="0.5"/>
+  <!-- Reed contacts -->
+  <line x1="249" y1="190" x2="251" y2="190" stroke="#D97706" stroke-width="1"/>
+  <line x1="249" y1="200" x2="251" y2="200" stroke="#D97706" stroke-width="1"/>
+
+  <!-- Float ball (on stem at water level) -->
+  <ellipse cx="250" cy="200" rx="28" ry="18" fill="url(#float-ball)" filter="url(#shadow)"/>
+  <ellipse cx="250" cy="197" rx="20" ry="12" fill="#FDE68A" opacity="0.3"/>
+  <!-- Magnet inside float -->
+  <rect x="240" y="196" width="20" height="8" rx="2" fill="#B45309" opacity="0.7"/>
+  <text x="250" y="203" text-anchor="middle" fill="#FEF3C7" font-family="monospace" font-size="5" font-weight="bold">N S</text>
+
+  <!-- Cable coming out of top -->
+  <path d="M250 72 L250 45 Q250 35 260 35 L320 35" stroke="#6B7280" stroke-width="2.5" fill="none"/>
+  <!-- Cable connector -->
+  <rect x="318" y="28" width="30" height="14" rx="3" fill="#374151"/>
+
+  <!-- Right side: Reed switch principle -->
+  <rect x="410" y="50" width="170" height="130" rx="8" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="495" y="72" text-anchor="middle" fill="#475569" font-family="Inter, sans-serif" font-size="10" font-weight="600">Reed Switch Prensibi</text>
+
+  <!-- Reed switch open state -->
+  <rect x="435" y="88" width="50" height="16" rx="2" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="0.8"/>
+  <line x1="440" y1="96" x2="455" y2="96" stroke="#D97706" stroke-width="1.5"/>
+  <line x1="465" y1="96" x2="480" y2="96" stroke="#D97706" stroke-width="1.5"/>
+  <text x="530" y="100" fill="#64748B" font-family="monospace" font-size="7">ACIK</text>
+
+  <!-- Reed switch closed state (magnet near) -->
+  <rect x="435" y="118" width="50" height="16" rx="2" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="0.8"/>
+  <line x1="440" y1="126" x2="480" y2="126" stroke="#D97706" stroke-width="1.5"/>
+  <text x="530" y="130" fill="#22C55E" font-family="monospace" font-size="7">KAPALI</text>
+
+  <!-- Float/magnet symbol -->
+  <ellipse cx="460" cy="148" rx="18" ry="8" fill="#FDE68A" stroke="#F59E0B" stroke-width="1"/>
+  <text x="460" y="151" text-anchor="middle" fill="#92400E" font-family="monospace" font-size="6">Magnet</text>
+  <!-- Arrow showing magnet approaching -->
+  <path d="M460 155 L460 132" stroke="#F59E0B" stroke-width="1" fill="none" stroke-dasharray="2 1"/>
+  <path d="M457 136 L460 130 L463 136" fill="#F59E0B"/>
+
+  <!-- Specs -->
+  <rect x="410" y="200" width="170" height="100" rx="8" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="495" y="220" text-anchor="middle" fill="#475569" font-family="Inter, sans-serif" font-size="10" font-weight="600">Ozellikler</text>
+  <text x="425" y="238" fill="#64748B" font-family="monospace" font-size="8">Olcum: 100-2000mm</text>
+  <text x="425" y="252" fill="#64748B" font-family="monospace" font-size="8">Cikis: Kontak / 4-20mA</text>
+  <text x="425" y="266" fill="#64748B" font-family="monospace" font-size="8">Malzeme: SS304/PP</text>
+  <text x="425" y="280" fill="#64748B" font-family="monospace" font-size="8">Koruma: IP65</text>
+  <text x="425" y="294" fill="#64748B" font-family="monospace" font-size="8">Sicaklik: -20~150°C</text>
+
+  <!-- Labels -->
+  <text x="300" y="360" text-anchor="middle" fill="#1E40AF" font-family="Inter, sans-serif" font-size="18" font-weight="700">Flotter Seviye Anahtari</text>
+  <text x="300" y="382" text-anchor="middle" fill="#64748B" font-family="Inter, sans-serif" font-size="12">Reed Switch | Flotter Tip | Kontak Cikis</text>
+</svg>

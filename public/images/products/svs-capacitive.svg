@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <defs>
+    <linearGradient id="probe-body" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6B7280"/>
+      <stop offset="25%" stop-color="#D1D5DB"/>
+      <stop offset="50%" stop-color="#E5E7EB"/>
+      <stop offset="75%" stop-color="#D1D5DB"/>
+      <stop offset="100%" stop-color="#6B7280"/>
+    </linearGradient>
+    <linearGradient id="housing-blue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E40AF"/>
+      <stop offset="50%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#1E3A8A"/>
+    </linearGradient>
+    <linearGradient id="insulation" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#DBEAFE"/>
+      <stop offset="50%" stop-color="#EFF6FF"/>
+      <stop offset="100%" stop-color="#DBEAFE"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="120%">
+      <feDropShadow dx="2" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="400" rx="12" fill="#F8FAFC"/>
+
+  <!-- Sensor housing (top, electronics) -->
+  <rect x="215" y="30" width="90" height="65" rx="8" fill="url(#housing-blue)" filter="url(#shadow)"/>
+  <!-- Model label -->
+  <rect x="225" y="42" width="70" height="16" rx="3" fill="#1E3A8A"/>
+  <text x="260" y="53" text-anchor="middle" fill="#DBEAFE" font-family="monospace" font-size="8" font-weight="bold">SVS-CAP</text>
+
+  <!-- LED indicator -->
+  <circle cx="240" cy="72" r="5" fill="#22C55E" opacity="0.8"/>
+  <circle cx="240" cy="72" r="3" fill="#4ADE80"/>
+  <text x="240" y="86" text-anchor="middle" fill="#DBEAFE" font-family="monospace" font-size="6">ON</text>
+  <!-- Second LED -->
+  <circle cx="280" cy="72" r="5" fill="#F59E0B" opacity="0.6"/>
+  <circle cx="280" cy="72" r="3" fill="#FCD34D"/>
+  <text x="280" y="86" text-anchor="middle" fill="#DBEAFE" font-family="monospace" font-size="6">ALM</text>
+
+  <!-- Cable connector (M12) -->
+  <rect x="300" y="48" width="16" height="28" rx="4" fill="#374151"/>
+  <rect x="312" y="54" width="20" height="16" rx="3" fill="#4B5563"/>
+  <!-- Cable -->
+  <path d="M332 62 L370 62 L370 50" stroke="#6B7280" stroke-width="2.5" fill="none"/>
+
+  <!-- Process connection thread -->
+  <rect x="238" y="93" width="44" height="22" rx="2" fill="url(#probe-body)"/>
+  <line x1="238" y1="100" x2="282" y2="100" stroke="#9CA3AF" stroke-width="0.5"/>
+  <line x1="238" y1="104" x2="282" y2="104" stroke="#9CA3AF" stroke-width="0.5"/>
+  <line x1="238" y1="108" x2="282" y2="108" stroke="#9CA3AF" stroke-width="0.5"/>
+  <!-- Hex nut -->
+  <polygon points="232,98 238,92 282,92 288,98 282,104 238,104" fill="url(#probe-body)" stroke="#6B7280" stroke-width="0.8"/>
+
+  <!-- Probe rod (sensing element) -->
+  <rect x="252" y="113" width="16" height="200" rx="3" fill="url(#probe-body)" filter="url(#shadow)"/>
+
+  <!-- Insulation layer visible (cutaway) -->
+  <rect x="255" y="130" width="10" height="170" rx="2" fill="url(#insulation)" opacity="0.7"/>
+
+  <!-- Inner electrode (core conductor) -->
+  <rect x="257" y="135" width="6" height="160" rx="1" fill="#9CA3AF"/>
+
+  <!-- Capacitance field lines (left side) -->
+  <path d="M248 160 Q230 170 248 180" stroke="#3B82F6" stroke-width="1" fill="none" stroke-dasharray="3 2" opacity="0.6"/>
+  <path d="M248 200 Q225 215 248 230" stroke="#3B82F6" stroke-width="1" fill="none" stroke-dasharray="3 2" opacity="0.6"/>
+  <path d="M248 250 Q222 268 248 286" stroke="#3B82F6" stroke-width="1" fill="none" stroke-dasharray="3 2" opacity="0.6"/>
+
+  <!-- Capacitance field lines (right side) -->
+  <path d="M272 160 Q290 170 272 180" stroke="#3B82F6" stroke-width="1" fill="none" stroke-dasharray="3 2" opacity="0.6"/>
+  <path d="M272 200 Q295 215 272 230" stroke="#3B82F6" stroke-width="1" fill="none" stroke-dasharray="3 2" opacity="0.6"/>
+  <path d="M272 250 Q298 268 272 286" stroke="#3B82F6" stroke-width="1" fill="none" stroke-dasharray="3 2" opacity="0.6"/>
+
+  <!-- Tip of probe -->
+  <ellipse cx="260" cy="315" rx="8" ry="4" fill="#9CA3AF"/>
+
+  <!-- Right side: Principle diagram -->
+  <rect x="380" y="40" width="190" height="140" rx="8" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="475" y="62" text-anchor="middle" fill="#475569" font-family="Inter, sans-serif" font-size="10" font-weight="600">Kapasitif Algilama</text>
+
+  <!-- Capacitor diagram -->
+  <!-- Electrode plate -->
+  <rect x="430" y="85" width="6" height="60" rx="1" fill="#1E40AF"/>
+  <text x="422" y="118" text-anchor="end" fill="#1E40AF" font-family="monospace" font-size="7">Elektrot</text>
+  <!-- Tank wall plate -->
+  <rect x="490" y="85" width="6" height="60" rx="1" fill="#6B7280"/>
+  <text x="510" y="118" fill="#6B7280" font-family="monospace" font-size="7">Govde</text>
+
+  <!-- Dielectric (medium between) -->
+  <rect x="440" y="85" width="46" height="60" rx="2" fill="#DBEAFE" opacity="0.5"/>
+  <text x="463" y="100" text-anchor="middle" fill="#3B82F6" font-family="monospace" font-size="7">Dielektrik</text>
+  <text x="463" y="112" text-anchor="middle" fill="#3B82F6" font-family="monospace" font-size="7">(Ortam)</text>
+
+  <!-- C = epsilon * A/d formula -->
+  <text x="475" y="165" text-anchor="middle" fill="#475569" font-family="monospace" font-size="10">C = ε × A / d</text>
+
+  <!-- Specifications -->
+  <rect x="380" y="200" width="190" height="100" rx="8" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="475" y="220" text-anchor="middle" fill="#475569" font-family="Inter, sans-serif" font-size="10" font-weight="600">Ozellikler</text>
+  <text x="395" y="238" fill="#64748B" font-family="monospace" font-size="8">Tip: Rod / Catal</text>
+  <text x="395" y="252" fill="#64748B" font-family="monospace" font-size="8">Cikis: PNP/NPN</text>
+  <text x="395" y="266" fill="#64748B" font-family="monospace" font-size="8">Besleme: 10-36VDC</text>
+  <text x="395" y="280" fill="#64748B" font-family="monospace" font-size="8">Baglanti: M12</text>
+  <text x="395" y="294" fill="#64748B" font-family="monospace" font-size="8">Koruma: IP67</text>
+
+  <!-- Labels -->
+  <text x="300" y="360" text-anchor="middle" fill="#1E40AF" font-family="Inter, sans-serif" font-size="18" font-weight="700">Kapasitif Seviye Anahtari</text>
+  <text x="300" y="382" text-anchor="middle" fill="#64748B" font-family="Inter, sans-serif" font-size="12">Rod Prob | PNP/NPN | M12 Konektor | IP67</text>
+</svg>

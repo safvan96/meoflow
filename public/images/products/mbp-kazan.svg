@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <defs>
+    <linearGradient id="tube" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4B5563"/>
+      <stop offset="30%" stop-color="#9CA3AF"/>
+      <stop offset="70%" stop-color="#6B7280"/>
+      <stop offset="100%" stop-color="#4B5563"/>
+    </linearGradient>
+    <linearGradient id="heavy-flange" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6B7280"/>
+      <stop offset="50%" stop-color="#D1D5DB"/>
+      <stop offset="100%" stop-color="#4B5563"/>
+    </linearGradient>
+    <linearGradient id="liquid-hot" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F97316" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#DC2626" stop-opacity="0.7"/>
+    </linearGradient>
+    <linearGradient id="float-g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#D97706"/>
+      <stop offset="50%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="tank-wall" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#374151"/>
+      <stop offset="50%" stop-color="#4B5563"/>
+      <stop offset="100%" stop-color="#374151"/>
+    </linearGradient>
+    <linearGradient id="jacket" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#92400E"/>
+      <stop offset="50%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#92400E"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="120%">
+      <feDropShadow dx="2" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="400" rx="12" fill="#F8FAFC"/>
+
+  <!-- Boiler/tank outline (right side, partial) -->
+  <rect x="380" y="20" width="190" height="340" rx="10" fill="none" stroke="url(#tank-wall)" stroke-width="5" stroke-dasharray="8 4" opacity="0.4"/>
+  <text x="475" y="15" text-anchor="middle" fill="#94A3B8" font-family="Inter, sans-serif" font-size="11">KAZAN</text>
+  <!-- Steam area (top of tank) -->
+  <rect x="385" y="25" width="180" height="120" rx="6" fill="#F1F5F9" opacity="0.3"/>
+  <!-- Steam symbols -->
+  <path d="M430 60 Q435 50 440 60 Q445 50 450 60" stroke="#CBD5E1" stroke-width="1.5" fill="none"/>
+  <path d="M470 50 Q475 40 480 50 Q485 40 490 50" stroke="#CBD5E1" stroke-width="1.5" fill="none"/>
+  <path d="M450 40 Q455 30 460 40 Q465 30 470 40" stroke="#CBD5E1" stroke-width="1.5" fill="none"/>
+  <!-- Hot liquid in tank -->
+  <rect x="385" y="145" width="180" height="210" rx="6" fill="url(#liquid-hot)" opacity="0.3"/>
+
+  <!-- Tall bypass tube (reinforced) -->
+  <rect x="285" y="25" width="42" height="340" rx="4" fill="url(#tube)" filter="url(#shadow)"/>
+  <!-- Inner tube visible area -->
+  <rect x="292" y="32" width="28" height="326" rx="2" fill="#F1F5F9" opacity="0.4"/>
+
+  <!-- Hot liquid inside tube -->
+  <rect x="292" y="148" width="28" height="210" rx="2" fill="url(#liquid-hot)"/>
+
+  <!-- Float/Magnet -->
+  <rect x="282" y="135" width="48" height="22" rx="6" fill="url(#float-g)" filter="url(#shadow)"/>
+  <text x="306" y="150" text-anchor="middle" fill="#92400E" font-family="monospace" font-size="8" font-weight="bold">N S</text>
+
+  <!-- Flap indicators -->
+  <!-- Red flaps (liquid) -->
+  <rect x="256" y="158" width="24" height="9" rx="2" fill="#DC2626"/>
+  <rect x="256" y="172" width="24" height="9" rx="2" fill="#DC2626"/>
+  <rect x="256" y="186" width="24" height="9" rx="2" fill="#DC2626"/>
+  <rect x="256" y="200" width="24" height="9" rx="2" fill="#DC2626"/>
+  <rect x="256" y="214" width="24" height="9" rx="2" fill="#DC2626"/>
+  <rect x="256" y="228" width="24" height="9" rx="2" fill="#DC2626"/>
+  <rect x="256" y="242" width="24" height="9" rx="2" fill="#DC2626"/>
+  <rect x="256" y="256" width="24" height="9" rx="2" fill="#DC2626"/>
+  <rect x="256" y="270" width="24" height="9" rx="2" fill="#DC2626"/>
+  <rect x="256" y="284" width="24" height="9" rx="2" fill="#DC2626"/>
+  <rect x="256" y="298" width="24" height="9" rx="2" fill="#DC2626"/>
+  <rect x="256" y="312" width="24" height="9" rx="2" fill="#DC2626"/>
+  <rect x="256" y="326" width="24" height="9" rx="2" fill="#DC2626"/>
+  <rect x="256" y="340" width="24" height="9" rx="2" fill="#DC2626"/>
+  <!-- White flaps (empty/steam) -->
+  <rect x="256" y="36" width="24" height="9" rx="2" fill="#F1F5F9" stroke="#D1D5DB" stroke-width="0.5"/>
+  <rect x="256" y="50" width="24" height="9" rx="2" fill="#F1F5F9" stroke="#D1D5DB" stroke-width="0.5"/>
+  <rect x="256" y="64" width="24" height="9" rx="2" fill="#F1F5F9" stroke="#D1D5DB" stroke-width="0.5"/>
+  <rect x="256" y="78" width="24" height="9" rx="2" fill="#F1F5F9" stroke="#D1D5DB" stroke-width="0.5"/>
+  <rect x="256" y="92" width="24" height="9" rx="2" fill="#F1F5F9" stroke="#D1D5DB" stroke-width="0.5"/>
+  <rect x="256" y="106" width="24" height="9" rx="2" fill="#F1F5F9" stroke="#D1D5DB" stroke-width="0.5"/>
+  <rect x="256" y="120" width="24" height="9" rx="2" fill="#F1F5F9" stroke="#D1D5DB" stroke-width="0.5"/>
+  <rect x="256" y="134" width="24" height="9" rx="2" fill="#F1F5F9" stroke="#D1D5DB" stroke-width="0.5"/>
+
+  <!-- Heavy-duty top flange connection -->
+  <rect x="327" y="38" width="56" height="22" rx="3" fill="url(#heavy-flange)"/>
+  <rect x="375" y="28" width="14" height="42" rx="3" fill="url(#heavy-flange)"/>
+  <circle cx="382" cy="38" r="3" fill="#4B5563"/>
+  <circle cx="382" cy="60" r="3" fill="#4B5563"/>
+
+  <!-- Heavy-duty bottom flange connection -->
+  <rect x="327" y="320" width="56" height="22" rx="3" fill="url(#heavy-flange)"/>
+  <rect x="375" y="310" width="14" height="42" rx="3" fill="url(#heavy-flange)"/>
+  <circle cx="382" cy="320" r="3" fill="#4B5563"/>
+  <circle cx="382" cy="342" r="3" fill="#4B5563"/>
+
+  <!-- Temperature jacket (around tube section) -->
+  <rect x="270" y="70" width="72" height="60" rx="4" fill="none" stroke="url(#jacket)" stroke-width="2.5" stroke-dasharray="6 3"/>
+  <text x="306" y="86" text-anchor="middle" fill="#D97706" font-family="monospace" font-size="7">STEAM</text>
+  <text x="306" y="96" text-anchor="middle" fill="#D97706" font-family="monospace" font-size="7">JACKET</text>
+  <!-- Jacket inlet/outlet -->
+  <rect x="270" y="78" width="8" height="10" rx="2" fill="#D97706"/>
+  <rect x="270" y="108" width="8" height="10" rx="2" fill="#D97706"/>
+
+  <!-- Pressure/temperature indicators -->
+  <g transform="translate(55, 45)">
+    <rect width="100" height="55" rx="6" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="50" y="16" text-anchor="middle" fill="#475569" font-family="Inter, sans-serif" font-size="9" font-weight="600">Kazan Kosullari</text>
+    <text x="10" y="32" fill="#DC2626" font-family="monospace" font-size="8">Temp: 250°C</text>
+    <text x="10" y="46" fill="#DC2626" font-family="monospace" font-size="8">Pres: 4.0 MPa</text>
+  </g>
+
+  <!-- High pressure rating badge -->
+  <g transform="translate(55, 120)">
+    <rect width="90" height="30" rx="4" fill="#FEF2F2" stroke="#FECACA" stroke-width="1"/>
+    <text x="45" y="13" text-anchor="middle" fill="#DC2626" font-family="Inter, sans-serif" font-size="8" font-weight="bold">PN64</text>
+    <text x="45" y="24" text-anchor="middle" fill="#DC2626" font-family="Inter, sans-serif" font-size="7">Yuksek Basinc</text>
+  </g>
+
+  <!-- Scale markings -->
+  <line x1="242" y1="45" x2="254" y2="45" stroke="#94A3B8" stroke-width="1"/>
+  <text x="238" y="49" text-anchor="end" fill="#94A3B8" font-family="monospace" font-size="7">100%</text>
+  <line x1="242" y1="145" x2="254" y2="145" stroke="#94A3B8" stroke-width="1"/>
+  <text x="238" y="149" text-anchor="end" fill="#94A3B8" font-family="monospace" font-size="7">65%</text>
+  <line x1="242" y1="255" x2="254" y2="255" stroke="#94A3B8" stroke-width="1"/>
+  <text x="238" y="259" text-anchor="end" fill="#94A3B8" font-family="monospace" font-size="7">30%</text>
+  <line x1="242" y1="345" x2="254" y2="345" stroke="#94A3B8" stroke-width="1"/>
+  <text x="238" y="349" text-anchor="end" fill="#94A3B8" font-family="monospace" font-size="7">0%</text>
+
+  <!-- Labels -->
+  <text x="150" y="380" text-anchor="middle" fill="#1E40AF" font-family="Inter, sans-serif" font-size="16" font-weight="700">Kazan Tipi Bypass</text>
+  <text x="150" y="396" text-anchor="middle" fill="#64748B" font-family="Inter, sans-serif" font-size="11">PN64 | 250°C | Buhar Ceketi</text>
+</svg>

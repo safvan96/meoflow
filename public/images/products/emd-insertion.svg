@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <defs>
+    <linearGradient id="large-pipe" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4B5563"/>
+      <stop offset="15%" stop-color="#9CA3AF"/>
+      <stop offset="50%" stop-color="#6B7280"/>
+      <stop offset="85%" stop-color="#9CA3AF"/>
+      <stop offset="100%" stop-color="#4B5563"/>
+    </linearGradient>
+    <linearGradient id="probe-rod" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6B7280"/>
+      <stop offset="30%" stop-color="#D1D5DB"/>
+      <stop offset="70%" stop-color="#9CA3AF"/>
+      <stop offset="100%" stop-color="#6B7280"/>
+    </linearGradient>
+    <linearGradient id="body-blue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E40AF"/>
+      <stop offset="50%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#1E3A8A"/>
+    </linearGradient>
+    <linearGradient id="display" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0EA5E9" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#0EA5E9" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="valve-body" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#9CA3AF"/>
+      <stop offset="50%" stop-color="#E5E7EB"/>
+      <stop offset="100%" stop-color="#9CA3AF"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="120%">
+      <feDropShadow dx="2" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="400" rx="12" fill="#F8FAFC"/>
+
+  <!-- Large main pipe (cross-section) -->
+  <rect x="30" y="200" width="540" height="120" rx="8" fill="url(#large-pipe)" filter="url(#shadow)"/>
+  <!-- Inner pipe wall -->
+  <rect x="38" y="210" width="524" height="100" rx="4" fill="#374151" opacity="0.3"/>
+  <!-- Water inside pipe -->
+  <rect x="42" y="214" width="516" height="92" rx="3" fill="url(#water)"/>
+
+  <!-- Flow arrows inside pipe -->
+  <path d="M80 258 L120 258 L114 250 M120 258 L114 266" stroke="#38BDF8" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M180 262 L220 262 L214 254 M220 262 L214 270" stroke="#38BDF8" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M390 258 L430 258 L424 250 M430 258 L424 266" stroke="#38BDF8" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M470 262 L510 262 L504 254 M510 262 L504 270" stroke="#38BDF8" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Ball valve / hot-tap fitting on pipe -->
+  <rect x="275" y="186" width="50" height="20" rx="3" fill="url(#valve-body)" stroke="#6B7280" stroke-width="1"/>
+  <!-- Valve body -->
+  <rect x="282" y="160" width="36" height="30" rx="4" fill="url(#valve-body)" filter="url(#shadow)"/>
+  <circle cx="300" cy="175" r="10" fill="#D1D5DB" stroke="#9CA3AF" stroke-width="1"/>
+  <!-- Valve handle -->
+  <rect x="294" y="148" width="12" height="16" rx="2" fill="#6B7280"/>
+  <rect x="284" y="142" width="32" height="8" rx="3" fill="#4B5563"/>
+
+  <!-- Probe rod (inserted through valve into pipe) -->
+  <rect x="294" y="90" width="12" height="118" rx="2" fill="url(#probe-rod)"/>
+
+  <!-- Probe tip with electrodes (inside pipe) -->
+  <rect x="291" y="214" width="18" height="70" rx="4" fill="url(#probe-rod)"/>
+  <!-- Electrode dots on probe tip -->
+  <circle cx="291" cy="245" r="4" fill="#E5E7EB" stroke="#60a5fa" stroke-width="1.5"/>
+  <circle cx="309" cy="245" r="4" fill="#E5E7EB" stroke="#60a5fa" stroke-width="1.5"/>
+  <circle cx="291" cy="265" r="4" fill="#E5E7EB" stroke="#60a5fa" stroke-width="1.5"/>
+  <circle cx="309" cy="265" r="4" fill="#E5E7EB" stroke="#60a5fa" stroke-width="1.5"/>
+
+  <!-- Transmitter head (on top of probe) -->
+  <rect x="265" y="28" width="70" height="64" rx="6" fill="url(#body-blue)" filter="url(#shadow)"/>
+  <rect x="274" y="36" width="52" height="32" rx="3" fill="url(#display)"/>
+  <text x="300" y="52" text-anchor="middle" fill="#22D3EE" font-family="monospace" font-size="9" font-weight="bold">3.2 m/s</text>
+  <text x="300" y="63" text-anchor="middle" fill="#67E8F9" font-family="monospace" font-size="7">VELOCITY</text>
+  <!-- Buttons -->
+  <circle cx="280" cy="78" r="3" fill="#334155" stroke="#475569" stroke-width="0.8"/>
+  <circle cx="300" cy="78" r="3" fill="#334155" stroke="#475569" stroke-width="0.8"/>
+  <circle cx="320" cy="78" r="3" fill="#334155" stroke="#475569" stroke-width="0.8"/>
+
+  <!-- Cable gland on transmitter -->
+  <rect x="272" y="20" width="10" height="12" rx="2" fill="#374151"/>
+  <rect x="318" y="20" width="10" height="12" rx="2" fill="#374151"/>
+
+  <!-- Pipe diameter annotation -->
+  <line x1="30" y1="335" x2="570" y2="335" stroke="#94A3B8" stroke-width="0.8" stroke-dasharray="3 2"/>
+  <text x="300" y="350" text-anchor="middle" fill="#94A3B8" font-family="monospace" font-size="9">DN300 - DN3000</text>
+
+  <!-- Insertion depth annotation -->
+  <line x1="330" y1="160" x2="350" y2="160" stroke="#3b82f6" stroke-width="0.8"/>
+  <line x1="330" y1="284" x2="350" y2="284" stroke="#3b82f6" stroke-width="0.8"/>
+  <line x1="340" y1="160" x2="340" y2="284" stroke="#3b82f6" stroke-width="0.8"/>
+  <text x="358" y="226" fill="#3b82f6" font-family="monospace" font-size="8">Insertion</text>
+  <text x="358" y="236" fill="#3b82f6" font-family="monospace" font-size="8">Depth</text>
+
+  <!-- Labels -->
+  <text x="300" y="375" text-anchor="middle" fill="#1E40AF" font-family="Inter, sans-serif" font-size="18" font-weight="700">Daldirma Tipi Debimetre</text>
+  <text x="300" y="394" text-anchor="middle" fill="#64748B" font-family="Inter, sans-serif" font-size="12">Hot-Tap Montaj | DN300-DN3000 | Elektrot Prob</text>
+</svg>

@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <defs>
+    <linearGradient id="steel-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9CA3AF"/>
+      <stop offset="25%" stop-color="#E5E7EB"/>
+      <stop offset="50%" stop-color="#D1D5DB"/>
+      <stop offset="75%" stop-color="#E5E7EB"/>
+      <stop offset="100%" stop-color="#6B7280"/>
+    </linearGradient>
+    <linearGradient id="ball-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#D1D5DB"/>
+      <stop offset="30%" stop-color="#F3F4F6"/>
+      <stop offset="70%" stop-color="#D1D5DB"/>
+      <stop offset="100%" stop-color="#9CA3AF"/>
+    </linearGradient>
+    <linearGradient id="handle" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E40AF"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#1E3A8A"/>
+    </linearGradient>
+    <linearGradient id="ptfe-seat" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#DBEAFE"/>
+      <stop offset="50%" stop-color="#EFF6FF"/>
+      <stop offset="100%" stop-color="#DBEAFE"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="120%">
+      <feDropShadow dx="2" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="400" rx="12" fill="#F8FAFC"/>
+
+  <!-- Handle (lever on top) -->
+  <rect x="250" y="52" width="100" height="18" rx="6" fill="url(#handle)" filter="url(#shadow)"/>
+  <!-- Handle grip -->
+  <rect x="325" y="48" width="30" height="26" rx="8" fill="url(#handle)"/>
+  <rect x="330" y="52" width="20" height="18" rx="5" fill="#2563EB" opacity="0.5"/>
+  <!-- Handle stem -->
+  <rect x="290" y="68" width="20" height="30" rx="3" fill="#6B7280"/>
+  <!-- Stem nut -->
+  <polygon points="284,76 290,70 310,70 316,76 310,82 290,82" fill="#9CA3AF" stroke="#6B7280" stroke-width="0.8"/>
+
+  <!-- === THREE-PIECE BODY (cutaway view) === -->
+
+  <!-- Left end piece (piece 1) -->
+  <rect x="90" y="130" width="130" height="120" rx="8" fill="url(#steel-body)" filter="url(#shadow)"/>
+  <!-- Left thread connection -->
+  <rect x="70" y="170" width="28" height="40" rx="2" fill="#9CA3AF"/>
+  <line x1="70" y1="178" x2="98" y2="178" stroke="#6B7280" stroke-width="0.5"/>
+  <line x1="70" y1="183" x2="98" y2="183" stroke="#6B7280" stroke-width="0.5"/>
+  <line x1="70" y1="188" x2="98" y2="188" stroke="#6B7280" stroke-width="0.5"/>
+  <line x1="70" y1="198" x2="98" y2="198" stroke="#6B7280" stroke-width="0.5"/>
+  <line x1="70" y1="203" x2="98" y2="203" stroke="#6B7280" stroke-width="0.5"/>
+  <!-- Left bore -->
+  <rect x="98" y="176" width="122" height="28" rx="2" fill="#F1F5F9"/>
+
+  <!-- Center piece (piece 2 - contains ball) -->
+  <rect x="218" y="125" width="164" height="130" rx="8" fill="url(#steel-body)" filter="url(#shadow)"/>
+  <!-- Body bolt line (left) -->
+  <line x1="220" y1="135" x2="220" y2="250" stroke="#6B7280" stroke-width="1.5" stroke-dasharray="2 2"/>
+  <!-- Body bolt line (right) -->
+  <line x1="380" y1="135" x2="380" y2="250" stroke="#6B7280" stroke-width="1.5" stroke-dasharray="2 2"/>
+  <!-- Bolts -->
+  <circle cx="220" cy="142" r="4" fill="#6B7280"/>
+  <circle cx="220" cy="248" r="4" fill="#6B7280"/>
+  <circle cx="380" cy="142" r="4" fill="#6B7280"/>
+  <circle cx="380" cy="248" r="4" fill="#6B7280"/>
+
+  <!-- Ball inside center piece -->
+  <circle cx="300" cy="190" r="42" fill="url(#ball-grad)" filter="url(#shadow)"/>
+  <circle cx="300" cy="190" r="38" fill="#E5E7EB"/>
+  <!-- Bore through ball -->
+  <rect x="260" y="178" width="80" height="24" rx="4" fill="#F1F5F9"/>
+  <!-- Ball surface highlight -->
+  <ellipse cx="288" cy="178" rx="15" ry="10" fill="#FFFFFF" opacity="0.3"/>
+
+  <!-- PTFE seats (on both sides of ball) -->
+  <rect x="250" y="168" width="8" height="44" rx="2" fill="url(#ptfe-seat)" stroke="#93C5FD" stroke-width="0.5"/>
+  <rect x="342" y="168" width="8" height="44" rx="2" fill="url(#ptfe-seat)" stroke="#93C5FD" stroke-width="0.5"/>
+
+  <!-- Right end piece (piece 3) -->
+  <rect x="380" y="130" width="130" height="120" rx="8" fill="url(#steel-body)" filter="url(#shadow)"/>
+  <!-- Right thread connection -->
+  <rect x="502" y="170" width="28" height="40" rx="2" fill="#9CA3AF"/>
+  <line x1="502" y1="178" x2="530" y2="178" stroke="#6B7280" stroke-width="0.5"/>
+  <line x1="502" y1="183" x2="530" y2="183" stroke="#6B7280" stroke-width="0.5"/>
+  <line x1="502" y1="188" x2="530" y2="188" stroke="#6B7280" stroke-width="0.5"/>
+  <line x1="502" y1="198" x2="530" y2="198" stroke="#6B7280" stroke-width="0.5"/>
+  <line x1="502" y1="203" x2="530" y2="203" stroke="#6B7280" stroke-width="0.5"/>
+  <!-- Right bore -->
+  <rect x="380" y="176" width="122" height="28" rx="2" fill="#F1F5F9"/>
+
+  <!-- Flow arrows through bore -->
+  <path d="M110 188 L150 188 L145 183 M150 188 L145 193" stroke="#38BDF8" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M270 188 L310 188 L305 183 M310 188 L305 193" stroke="#38BDF8" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M400 188 L440 188 L435 183 M440 188 L435 193" stroke="#38BDF8" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <!-- Three-piece annotation -->
+  <path d="M155 262 L155 275" stroke="#64748B" stroke-width="0.8"/>
+  <path d="M300 262 L300 275" stroke="#64748B" stroke-width="0.8"/>
+  <path d="M445 262 L445 275" stroke="#64748B" stroke-width="0.8"/>
+  <text x="155" y="288" text-anchor="middle" fill="#64748B" font-family="Inter, sans-serif" font-size="9">Parca 1</text>
+  <text x="300" y="288" text-anchor="middle" fill="#64748B" font-family="Inter, sans-serif" font-size="9">Parca 2</text>
+  <text x="445" y="288" text-anchor="middle" fill="#64748B" font-family="Inter, sans-serif" font-size="9">Parca 3</text>
+
+  <!-- Material legend -->
+  <rect x="100" y="305" width="12" height="12" rx="2" fill="url(#ptfe-seat)"/>
+  <text x="118" y="315" fill="#64748B" font-family="Inter, sans-serif" font-size="9">PTFE Conta</text>
+
+  <rect x="210" y="305" width="12" height="12" rx="2" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="0.5"/>
+  <text x="228" y="315" fill="#64748B" font-family="Inter, sans-serif" font-size="9">SS304 Bilya</text>
+
+  <rect x="340" y="305" width="12" height="12" rx="2" fill="url(#handle)"/>
+  <text x="358" y="315" fill="#64748B" font-family="Inter, sans-serif" font-size="9">Kol</text>
+
+  <!-- Labels -->
+  <text x="300" y="350" text-anchor="middle" fill="#1E40AF" font-family="Inter, sans-serif" font-size="18" font-weight="700">3 Parcali Kure Vana</text>
+  <text x="300" y="372" text-anchor="middle" fill="#64748B" font-family="Inter, sans-serif" font-size="12">SS304 | PTFE Conta | Disli Baglanti | Tam Gecis</text>
+</svg>

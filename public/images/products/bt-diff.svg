@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <defs>
+    <linearGradient id="housing" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E40AF"/>
+      <stop offset="40%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#1E3A8A"/>
+    </linearGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6B7280"/>
+      <stop offset="25%" stop-color="#D1D5DB"/>
+      <stop offset="50%" stop-color="#E5E7EB"/>
+      <stop offset="75%" stop-color="#D1D5DB"/>
+      <stop offset="100%" stop-color="#6B7280"/>
+    </linearGradient>
+    <linearGradient id="display-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="diaphragm" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9CA3AF"/>
+      <stop offset="50%" stop-color="#F3F4F6"/>
+      <stop offset="100%" stop-color="#6B7280"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="120%">
+      <feDropShadow dx="2" dy="3" stdDeviation="5" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="400" rx="12" fill="#F8FAFC"/>
+
+  <!-- Central electronics housing -->
+  <rect x="225" y="30" width="150" height="160" rx="10" fill="url(#housing)" filter="url(#shadow)"/>
+
+  <!-- Display -->
+  <rect x="245" y="45" width="110" height="60" rx="5" fill="url(#display-bg)"/>
+  <text x="300" y="70" text-anchor="middle" fill="#22D3EE" font-family="monospace" font-size="14" font-weight="bold">DP</text>
+  <text x="300" y="88" text-anchor="middle" fill="#67E8F9" font-family="monospace" font-size="10">0.45 kPa</text>
+  <text x="300" y="100" text-anchor="middle" fill="#475569" font-family="monospace" font-size="7">12.8 mA</text>
+
+  <!-- Buttons -->
+  <circle cx="262" cy="125" r="5" fill="#334155" stroke="#475569" stroke-width="1"/>
+  <circle cx="300" cy="125" r="5" fill="#334155" stroke="#475569" stroke-width="1"/>
+  <circle cx="338" cy="125" r="5" fill="#334155" stroke="#475569" stroke-width="1"/>
+
+  <!-- Model label -->
+  <rect x="255" y="145" width="90" height="22" rx="3" fill="#1E3A8A" opacity="0.6"/>
+  <text x="300" y="157" text-anchor="middle" fill="#BFDBFE" font-family="Inter, sans-serif" font-size="7">MEOFLOW</text>
+  <text x="300" y="165" text-anchor="middle" fill="#93C5FD" font-family="Inter, sans-serif" font-size="7">BT-DP3000</text>
+
+  <!-- Cable glands -->
+  <rect x="240" y="22" width="16" height="16" rx="3" fill="#374151"/>
+  <rect x="344" y="22" width="16" height="16" rx="3" fill="#374151"/>
+
+  <!-- Left arm (High side) -->
+  <rect x="120" y="185" width="185" height="24" rx="3" fill="url(#steel)"/>
+  <!-- Left impulse line connection -->
+  <rect x="80" y="172" width="48" height="50" rx="5" fill="url(#steel)" filter="url(#shadow)"/>
+  <!-- Left diaphragm seal -->
+  <ellipse cx="104" cy="230" rx="30" ry="12" fill="url(#diaphragm)" filter="url(#shadow)"/>
+  <ellipse cx="104" cy="230" rx="22" ry="8" fill="#E5E7EB" opacity="0.5"/>
+  <!-- Left process connection -->
+  <rect x="90" y="238" width="28" height="35" rx="2" fill="url(#steel)"/>
+  <line x1="90" y1="248" x2="118" y2="248" stroke="#9CA3AF" stroke-width="0.5"/>
+  <line x1="90" y1="253" x2="118" y2="253" stroke="#9CA3AF" stroke-width="0.5"/>
+  <line x1="90" y1="258" x2="118" y2="258" stroke="#9CA3AF" stroke-width="0.5"/>
+  <line x1="90" y1="263" x2="118" y2="263" stroke="#9CA3AF" stroke-width="0.5"/>
+  <!-- Hex nut -->
+  <polygon points="85,240 90,234 118,234 123,240 118,246 90,246" fill="url(#steel)" stroke="#6B7280" stroke-width="0.8"/>
+  <!-- H label -->
+  <rect x="72" y="160" width="24" height="16" rx="3" fill="#DBEAFE"/>
+  <text x="84" y="172" text-anchor="middle" fill="#1E40AF" font-family="Inter, sans-serif" font-size="10" font-weight="bold">H</text>
+
+  <!-- Right arm (Low side) -->
+  <rect x="295" y="185" width="185" height="24" rx="3" fill="url(#steel)"/>
+  <!-- Right impulse line connection -->
+  <rect x="472" y="172" width="48" height="50" rx="5" fill="url(#steel)" filter="url(#shadow)"/>
+  <!-- Right diaphragm seal -->
+  <ellipse cx="496" cy="230" rx="30" ry="12" fill="url(#diaphragm)" filter="url(#shadow)"/>
+  <ellipse cx="496" cy="230" rx="22" ry="8" fill="#E5E7EB" opacity="0.5"/>
+  <!-- Right process connection -->
+  <rect x="482" y="238" width="28" height="35" rx="2" fill="url(#steel)"/>
+  <line x1="482" y1="248" x2="510" y2="248" stroke="#9CA3AF" stroke-width="0.5"/>
+  <line x1="482" y1="253" x2="510" y2="253" stroke="#9CA3AF" stroke-width="0.5"/>
+  <line x1="482" y1="258" x2="510" y2="258" stroke="#9CA3AF" stroke-width="0.5"/>
+  <line x1="482" y1="263" x2="510" y2="263" stroke="#9CA3AF" stroke-width="0.5"/>
+  <!-- Hex nut -->
+  <polygon points="477,240 482,234 510,234 515,240 510,246 482,246" fill="url(#steel)" stroke="#6B7280" stroke-width="0.8"/>
+  <!-- L label -->
+  <rect x="504" y="160" width="24" height="16" rx="3" fill="#DBEAFE"/>
+  <text x="516" y="172" text-anchor="middle" fill="#1E40AF" font-family="Inter, sans-serif" font-size="10" font-weight="bold">L</text>
+
+  <!-- DP principle diagram -->
+  <rect x="170" y="295" width="260" height="65" rx="6" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="300" y="312" text-anchor="middle" fill="#475569" font-family="Inter, sans-serif" font-size="10" font-weight="600">Diferansiyel Basinc Prensibi</text>
+  <!-- Mini pipe with orifice -->
+  <rect x="195" y="325" width="210" height="16" rx="3" fill="#CBD5E1"/>
+  <rect x="295" y="322" width="10" height="22" rx="1" fill="#64748B"/>
+  <!-- Pressure arrows -->
+  <path d="M220 333 L250 333 L246 329 M250 333 L246 337" stroke="#3b82f6" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M350 333 L380 333 L376 329 M380 333 L376 337" stroke="#3b82f6" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <text x="240" y="352" text-anchor="middle" fill="#1E40AF" font-family="monospace" font-size="8">P1 (H)</text>
+  <text x="370" y="352" text-anchor="middle" fill="#1E40AF" font-family="monospace" font-size="8">P2 (L)</text>
+  <text x="300" y="352" text-anchor="middle" fill="#DC2626" font-family="monospace" font-size="8">DP</text>
+
+  <!-- Labels -->
+  <text x="300" y="386" text-anchor="middle" fill="#1E40AF" font-family="Inter, sans-serif" font-size="18" font-weight="700">Diferansiyel Basinc Transmitteri</text>
+</svg>

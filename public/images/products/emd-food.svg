@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <defs>
+    <linearGradient id="body-ss" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#D1D5DB"/>
+      <stop offset="30%" stop-color="#F3F4F6"/>
+      <stop offset="70%" stop-color="#D1D5DB"/>
+      <stop offset="100%" stop-color="#9CA3AF"/>
+    </linearGradient>
+    <linearGradient id="body-blue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E40AF"/>
+      <stop offset="50%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#1E3A8A"/>
+    </linearGradient>
+    <linearGradient id="display" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="liner" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#DBEAFE"/>
+      <stop offset="100%" stop-color="#93C5FD"/>
+    </linearGradient>
+    <linearGradient id="triclamp" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E5E7EB"/>
+      <stop offset="50%" stop-color="#F9FAFB"/>
+      <stop offset="100%" stop-color="#9CA3AF"/>
+    </linearGradient>
+    <linearGradient id="coil" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#B45309"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="120%">
+      <feDropShadow dx="2" dy="4" stdDeviation="5" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="400" rx="12" fill="#F8FAFC"/>
+
+  <!-- Left pipe -->
+  <rect x="20" y="170" width="110" height="60" rx="8" fill="url(#body-ss)" filter="url(#shadow)"/>
+  <!-- Left tri-clamp connection -->
+  <ellipse cx="135" cy="200" rx="8" ry="42" fill="url(#triclamp)" stroke="#9CA3AF" stroke-width="1"/>
+  <path d="M140 162 L155 158 L155 242 L140 238" fill="#D1D5DB" stroke="#9CA3AF" stroke-width="0.5"/>
+  <!-- Clamp ring -->
+  <ellipse cx="150" cy="200" rx="5" ry="46" fill="none" stroke="#6B7280" stroke-width="2.5"/>
+  <rect x="144" y="152" width="12" height="8" rx="2" fill="#6B7280"/>
+
+  <!-- Right pipe -->
+  <rect x="470" y="170" width="110" height="60" rx="8" fill="url(#body-ss)" filter="url(#shadow)"/>
+  <!-- Right tri-clamp connection -->
+  <ellipse cx="465" cy="200" rx="8" ry="42" fill="url(#triclamp)" stroke="#9CA3AF" stroke-width="1"/>
+  <path d="M460 162 L445 158 L445 242 L460 238" fill="#D1D5DB" stroke="#9CA3AF" stroke-width="0.5"/>
+  <!-- Clamp ring -->
+  <ellipse cx="450" cy="200" rx="5" ry="46" fill="none" stroke="#6B7280" stroke-width="2.5"/>
+  <rect x="444" y="152" width="12" height="8" rx="2" fill="#6B7280"/>
+
+  <!-- Flowmeter body (SS316L polished) -->
+  <rect x="160" y="145" width="280" height="110" rx="14" fill="url(#body-ss)" filter="url(#shadow)"/>
+  <!-- Polished internal surface highlight -->
+  <rect x="170" y="155" width="260" height="90" rx="10" fill="#F9FAFB" opacity="0.4"/>
+
+  <!-- PTFE liner (visible inside cutaway) -->
+  <rect x="175" y="168" width="250" height="64" rx="6" fill="url(#liner)" opacity="0.5"/>
+  <rect x="180" y="172" width="240" height="56" rx="4" fill="#DBEAFE" opacity="0.3"/>
+
+  <!-- Polished mirror finish lines -->
+  <line x1="180" y1="165" x2="420" y2="165" stroke="#FFFFFF" stroke-width="0.8" opacity="0.6"/>
+  <line x1="182" y1="235" x2="418" y2="235" stroke="#FFFFFF" stroke-width="0.5" opacity="0.4"/>
+
+  <!-- Coils -->
+  <rect x="185" y="170" width="14" height="60" rx="2" fill="url(#coil)" opacity="0.7"/>
+  <rect x="401" y="170" width="14" height="60" rx="2" fill="url(#coil)" opacity="0.7"/>
+
+  <!-- Electrodes -->
+  <circle cx="215" cy="200" r="5" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1.5"/>
+  <circle cx="385" cy="200" r="5" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1.5"/>
+
+  <!-- Flow arrows -->
+  <path d="M240 195 L270 195 L265 189 M270 195 L265 201" stroke="#3b82f6" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M290 200 L320 200 L315 194 M320 200 L315 206" stroke="#3b82f6" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M340 195 L370 195 L365 189 M370 195 L365 201" stroke="#3b82f6" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <!-- Display housing -->
+  <rect x="248" y="60" width="104" height="72" rx="8" fill="url(#body-blue)" filter="url(#shadow)"/>
+  <rect x="258" y="68" width="84" height="44" rx="4" fill="url(#display)"/>
+  <text x="300" y="86" text-anchor="middle" fill="#22D3EE" font-family="monospace" font-size="10" font-weight="bold">85.2 m³/h</text>
+  <text x="300" y="102" text-anchor="middle" fill="#67E8F9" font-family="monospace" font-size="8">FLOW RATE</text>
+  <!-- Connection neck -->
+  <rect x="285" y="130" width="30" height="18" rx="2" fill="url(#body-ss)"/>
+  <!-- Cable glands -->
+  <rect x="254" y="52" width="12" height="12" rx="3" fill="#374151"/>
+  <rect x="334" y="52" width="12" height="12" rx="3" fill="#374151"/>
+
+  <!-- SS316L label on body -->
+  <rect x="265" y="243" width="70" height="16" rx="3" fill="#E5E7EB" opacity="0.8"/>
+  <text x="300" y="254" text-anchor="middle" fill="#6B7280" font-family="monospace" font-size="8" font-weight="bold">SS316L</text>
+
+  <!-- Certification badges -->
+  <circle cx="100" cy="310" r="18" fill="none" stroke="#1E40AF" stroke-width="1.5"/>
+  <text x="100" y="308" text-anchor="middle" fill="#1E40AF" font-family="Inter, sans-serif" font-size="7" font-weight="bold">FDA</text>
+  <text x="100" y="318" text-anchor="middle" fill="#1E40AF" font-family="Inter, sans-serif" font-size="6">Approved</text>
+
+  <circle cx="150" cy="310" r="18" fill="none" stroke="#1E40AF" stroke-width="1.5"/>
+  <text x="150" y="308" text-anchor="middle" fill="#1E40AF" font-family="Inter, sans-serif" font-size="7" font-weight="bold">3-A</text>
+  <text x="150" y="318" text-anchor="middle" fill="#1E40AF" font-family="Inter, sans-serif" font-size="6">Sanitary</text>
+
+  <!-- Labels -->
+  <text x="300" y="340" text-anchor="middle" fill="#1E40AF" font-family="Inter, sans-serif" font-size="18" font-weight="700">Gidaya Uygun Debimetre</text>
+  <text x="300" y="362" text-anchor="middle" fill="#64748B" font-family="Inter, sans-serif" font-size="12">Tri-Clamp | SS316L | PTFE Astar | FDA Onayı</text>
+</svg>

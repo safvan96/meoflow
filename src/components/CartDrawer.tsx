@@ -1,9 +1,11 @@
 "use client";
 
 import { useCart } from "@/context/CartContext";
+import { useLanguage } from "@/context/LanguageContext";
 import Link from "next/link";
 
 export default function CartDrawer() {
+  const { t } = useLanguage();
   const {
     items,
     removeFromCart,
@@ -30,7 +32,7 @@ export default function CartDrawer() {
         {/* Header */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
           <h2 className="text-lg font-bold text-primary-800">
-            Sepetim ({totalItems} ürün)
+            {t("cart.myCart")} ({totalItems} {t("cart.items")})
           </h2>
           <button
             onClick={() => setIsCartOpen(false)}
@@ -47,7 +49,7 @@ export default function CartDrawer() {
           <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
           </svg>
-          Güncel Döviz Kuru: 1 USD = {exchangeRate.toFixed(2)} TL
+          {t("cart.exchangeRateInfo")}: 1 USD = {exchangeRate.toFixed(2)} TL
         </div>
 
         {/* Items */}
@@ -57,8 +59,8 @@ export default function CartDrawer() {
               <svg className="w-16 h-16 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
               </svg>
-              <p className="text-sm font-medium">Sepetiniz bos</p>
-              <p className="text-xs mt-1">Ürünleri kesfetmeye baslayin</p>
+              <p className="text-sm font-medium">{t("cart.empty")}</p>
+              <p className="text-xs mt-1">{t("cart.emptyDescription")}</p>
             </div>
           ) : (
             <div className="space-y-4">
@@ -125,22 +127,22 @@ export default function CartDrawer() {
         {items.length > 0 && (
           <div className="border-t border-gray-100 px-5 py-4 space-y-3">
             <div className="flex justify-between text-sm text-gray-600">
-              <span>Ara Toplam</span>
+              <span>{t("cart.subtotal")}</span>
               <span>{totalPrice.toLocaleString("tr-TR", { maximumFractionDigits: 0 })} TL</span>
             </div>
             <div className="flex justify-between text-sm text-gray-600">
-              <span>Kargo</span>
+              <span>{t("cart.shipping")}</span>
               <span className={shippingCost === 0 ? "text-green-600 font-medium" : ""}>
-                {shippingCost === 0 ? "Ucretsiz" : `${shippingCost.toLocaleString("tr-TR")} TL`}
+                {shippingCost === 0 ? t("cart.freeShipping") : `${shippingCost.toLocaleString("tr-TR")} TL`}
               </span>
             </div>
             {shippingCost > 0 && (
               <p className="text-xs text-primary-600">
-                50.000 TL ustu siparislerde ucretsiz kargo!
+                {t("cart.freeShippingNote")}
               </p>
             )}
             <div className="flex justify-between text-base font-bold text-primary-800 pt-2 border-t border-gray-100">
-              <span>Toplam</span>
+              <span>{t("cart.total")}</span>
               <span>{grandTotal.toLocaleString("tr-TR", { maximumFractionDigits: 0 })} TL</span>
             </div>
             <Link
@@ -148,7 +150,7 @@ export default function CartDrawer() {
               onClick={() => setIsCartOpen(false)}
               className="block w-full py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white text-center rounded-xl font-semibold hover:from-primary-700 hover:to-primary-800 transition-all shadow-lg shadow-primary-200"
             >
-              Sepete Git
+              {t("cart.goToCart")}
             </Link>
           </div>
         )}
